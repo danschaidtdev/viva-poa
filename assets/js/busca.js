@@ -1,9 +1,8 @@
 const pastaEstabelecimentos = "/viva-poa/estabelecimento/";
 const arquivosEstabelecimentos = [
-  "pizza_broto.html",
-  "lanchonete-maria.html",
-  "mercado-central.html",
-  "farmacia-vida.html",
+  "pizza-broto.html",
+  "lanche-pampa.html",
+ 
   // Adicione aqui o nome de todos os arquivos manualmente ou com backend automático.
 ];
 
