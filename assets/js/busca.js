@@ -1,37 +1,15 @@
-const pastaEstabelecimentos = "/estabelecimento/";
-const arquivosEstabelecimentos = [
-  "pizza_broto.html",
-  "lanchonete-maria.html",
-  "mercado-central.html",
-  "farmacia-vida.html",
-  // Adicione aqui o nome de todos os arquivos manualmente ou com backend automático.
-];
-
-document.getElementById("botao-busca").addEventListener("click", () => {
-  const termo = document.getElementById("busca").value.toLowerCase();
-  buscarMetaTags(termo);
-});
-
-function buscarPorCategoria(categoria) {
-  buscarMetaTags(categoria.toLowerCase());
-}
-
-function mostrarAleatorios() {
-  const aleatorios = arquivosEstabelecimentos.sort(() => 0.5 - Math.random()).slice(0, 3);
-  buscarMetaTags('', aleatorios);
-}
-
-async function buscarMetaTags(filtro, listaEspecifica = null) {
+async function buscarMetaTags(filtro) {
   const container = document.getElementById("resultados");
   container.innerHTML = "<p>Buscando...</p>";
 
-  const lista = listaEspecifica || arquivosEstabelecimentos;
+  const resposta = await fetch("../Viva CB/assets/js/estabelecimentos.json");
+  const arquivos = await resposta.json();
 
   const resultados = [];
 
-  for (const arquivo of lista) {
+  for (const arquivo of arquivos) {
     try {
-      const resposta = await fetch(pastaEstabelecimentos + arquivo);
+      const resposta = await fetch(`/estabelecimento/${arquivo}`);
       const texto = await resposta.text();
 
       const parser = new DOMParser();
@@ -43,7 +21,7 @@ async function buscarMetaTags(filtro, listaEspecifica = null) {
       const conteudo = `${title} ${desc}`.toLowerCase();
 
       if (conteudo.includes(filtro)) {
-        resultados.push({ titulo: title, descricao: desc, link: pastaEstabelecimentos + arquivo });
+        resultados.push({ titulo: title, descricao: desc, link: `/estabelecimento/${arquivo}` });
       }
     } catch (e) {
       console.warn(`Erro ao buscar ${arquivo}:`, e);
@@ -51,25 +29,4 @@ async function buscarMetaTags(filtro, listaEspecifica = null) {
   }
 
   mostrarResultados(resultados);
-}
-
-function mostrarResultados(resultados) {
-  const container = document.getElementById("resultados");
-  container.innerHTML = "";
-
-  if (resultados.length === 0) {
-    container.innerHTML = "<p>Nenhum resultado encontrado.</p>";
-    return;
-  }
-
-  resultados.forEach(r => {
-    const card = document.createElement("div");
-    card.classList.add("card-resultado");
-    card.innerHTML = `
-      <h2>${r.titulo}</h2>
-      <p>${r.descricao}</p>
-      <a href="${r.link}" target="_blank">Ver mais</a>
-    `;
-    container.appendChild(card);
-  });
 }
