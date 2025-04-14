@@ -1,4 +1,4 @@
-const pastaEstabelecimentos = "/estabelecimentos/";
+const pastaEstabelecimentos = "/viva-poa/estabelecimento/";
 const arquivosEstabelecimentos = [
   "pizza_broto.html",
   "lanchonete-maria.html",
