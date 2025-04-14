@@ -1,59 +1,75 @@
-// busca.js
-const paginas = [
-  '../Viva CB/estabelecimentos/pizza_broto.html',
-  '../Viva CB/estabelecimentos/lanche_pampa.html',
-  // adicione outras páginas aqui
+const pastaEstabelecimentos = "/estabelecimento/";
+const arquivosEstabelecimentos = [
+  "pizza_broto.html",
+  "lanchonete-maria.html",
+  "mercado-central.html",
+  "farmacia-vida.html",
+  // Adicione aqui o nome de todos os arquivos manualmente ou com backend automático.
 ];
 
-function extrairMetasDoHTML(htmlString) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlString, 'text/html');
+document.getElementById("botao-busca").addEventListener("click", () => {
+  const termo = document.getElementById("busca").value.toLowerCase();
+  buscarMetaTags(termo);
+});
 
-  return {
-    nome: doc.querySelector('meta[name="nome"]')?.content || '',
-    categoria: doc.querySelector('meta[name="categoria"]')?.content || '',
-    bairro: doc.querySelector('meta[name="bairro"]')?.content || '',
-    rua: doc.querySelector('meta[name="rua"]')?.content || '',
-    descricao: doc.querySelector('meta[name="descricao"]')?.content || ''
-  };
+function buscarPorCategoria(categoria) {
+  buscarMetaTags(categoria.toLowerCase());
 }
 
-async function carregarDadosMeta() {
-  const resultados = document.getElementById('resultados');
-  resultados.innerHTML = 'Carregando...';
+function mostrarAleatorios() {
+  const aleatorios = arquivosEstabelecimentos.sort(() => 0.5 - Math.random()).slice(0, 3);
+  buscarMetaTags('', aleatorios);
+}
 
-  const dados = [];
+async function buscarMetaTags(filtro, listaEspecifica = null) {
+  const container = document.getElementById("resultados");
+  container.innerHTML = "<p>Buscando...</p>";
 
-  for (const url of paginas) {
+  const lista = listaEspecifica || arquivosEstabelecimentos;
+
+  const resultados = [];
+
+  for (const arquivo of lista) {
     try {
-      const response = await fetch(url);
-      const text = await response.text();
-      const metaInfo = extrairMetasDoHTML(text);
-      dados.push(metaInfo);
-    } catch (error) {
-      console.error(`Erro ao carregar ${url}:`, error);
+      const resposta = await fetch(pastaEstabelecimentos + arquivo);
+      const texto = await resposta.text();
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(texto, "text/html");
+
+      const title = doc.querySelector("meta[property='og:title']")?.content || "Sem título";
+      const desc = doc.querySelector("meta[name='description']")?.content || "Sem descrição";
+
+      const conteudo = `${title} ${desc}`.toLowerCase();
+
+      if (conteudo.includes(filtro)) {
+        resultados.push({ titulo: title, descricao: desc, link: pastaEstabelecimentos + arquivo });
+      }
+    } catch (e) {
+      console.warn(`Erro ao buscar ${arquivo}:`, e);
     }
   }
 
-  mostrarResultados(dados);
+  mostrarResultados(resultados);
 }
 
-function mostrarResultados(dados) {
-  const container = document.getElementById('resultados');
-  container.innerHTML = '';
+function mostrarResultados(resultados) {
+  const container = document.getElementById("resultados");
+  container.innerHTML = "";
 
-  dados.forEach(info => {
-    const div = document.createElement('div');
-    div.className = 'resultado-item';
-    div.innerHTML = `
-      <h2>${info.nome}</h2>
-      <p><strong>Categoria:</strong> ${info.categoria}</p>
-      <p><strong>Bairro:</strong> ${info.bairro}</p>
-      <p><strong>Rua:</strong> ${info.rua}</p>
-      <p>${info.descricao}</p>
+  if (resultados.length === 0) {
+    container.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+    return;
+  }
+
+  resultados.forEach(r => {
+    const card = document.createElement("div");
+    card.classList.add("card-resultado");
+    card.innerHTML = `
+      <h2>${r.titulo}</h2>
+      <p>${r.descricao}</p>
+      <a href="${r.link}" target="_blank">Ver mais</a>
     `;
-    container.appendChild(div);
+    container.appendChild(card);
   });
 }
-
-document.getElementById('botao-busca').addEventListener('click', carregarDadosMeta);
