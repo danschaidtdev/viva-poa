@@ -48,8 +48,10 @@
   .resultado {
     display: flex;
     background-color: var(--cor-clara);
-    border: 1px solid var(--cor-cinza);
-    border-radius: 8px;
+    border: 1px solid var(--cor-vermelho);
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
     overflow: hidden;
   }
 
@@ -82,7 +84,6 @@
 
   .card-resultado {
     border: 1px solid var(--cor-cinza);
-    width: 100%;
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
