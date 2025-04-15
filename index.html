@@ -38,7 +38,7 @@
 				<img src="https://www.rbsdirect.com.br/filestore/1/0/0/4/3_f77a3fdd400a3d4/34001_37676e054c01388.jpg" alt="">
 				<div class="mensagem">
 				
-					<h1>Pizzaria <strong>Meu Broto</strong> em Porto Alegre</h1>
+					<h1>Descubra <strong>Porto Alegre</strong> através de quem é daqui.</h1>
 
 				</div>
 			</div>
@@ -87,7 +87,7 @@
       <button onclick="mostrarAleatorios()">Buscar Aleatórios</button>
     </div>
   </div>
-  <div id="resultados"></div>
+  <div id="resultados"></div><br>
 
 
 
@@ -195,28 +195,26 @@
 		  
 			<div class="blocoTitulos animar" data-delay="0.3s">
 			  <section id="fundo" class="animar" data-delay="0.5s">
-				<h3>Que bom ver você por aqui.</h3>
-				Veja nossos sabores de pizza e depois que escolher fale comigo pelo whatsapp!
-				<p>Broto</p>
+				<h3>Esse site é parte de uma iniciativa minha para ajudar o comércio local de Porto Alegre.</h3>
+				
+				<p>Dan Schaidt</p>
 			  </section>
 		  
 			  <section id="fundo" class="animar" data-delay="0.7s">
-				<h4><strong>Pizzas Doces</strong></h4>
-				Chocolate Preto;<br>
-				Chocolate ;<br>
-				Chocolate Amendoim com Chocolate.
-				<p>Broto</p>
+				<h4><strong>Doe para ajudar o projeto</strong></h4>
+				A intenção é trazer novas funcções para os clientes e donos de estabelecimentos, como pagamentos pelo site e muito mais.<br>
+				A sua doação me ajuda continuar e buscar novos parceiros.<br>
+				<p>Dan Schaidt</p>
 			  </section>
 			  
 			  <section id="fundo" class="animar" data-delay="0.7s">
-				<h4><strong>Pizzas Salgadas</strong></h4>
-				Frango com Catupiry;<br>
-				Calabresa;<br>
-				Lombo com Cheddar.
-				<p>Broto</p>
+				<h4><strong>Com foco no marketing e empreendedorismo com responsabilidade social</strong></h4>
+				No Brasil existem 6,4 milhões de estabelecimentos. Desse total, 99% são micro e pequenas empresas (MPE). As MPEs respondem por 52% dos empregos com carteira assinada no setor privado (16,1 milhões).
+        <a href="https://sebrae.com.br/sites/PortalSebrae/ufs/sp/sebraeaz/pequenos-negocios-em-numeros,12e8794363447510VgnVCM1000004c00210aRCRD#:~:text=No%20Brasil%20existem%206%2C4,(16%2C1%20milh%C3%B5es)." target="_blank">Fonte: SEBRAE</a>
+				<p>Dan Schaidt</p>
 			  </section>
 		  
-			  <img class="animar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTNrFIuEKUtIoQKbIC3BEoDnIO9g2OzKDJTg&s" alt="Meu broto pizzaria">
+			  <img class="animar" src="dan-schaidt-freelance-design-merketing-gestao.webp" alt="Dan Schaidt">
 			</div>
 		  </div>
 		  
@@ -286,56 +284,17 @@
 		<div class="containerFixos">
 			<div class="blocoFixo">
 			  <img src="https://cdn.pixabay.com/photo/2023/05/17/15/29/gold-seal-8000479_1280.png" alt="Botão 1">
-			  <section><p>QUALIDADE GARANTIDA</p></section>
+			  <section><p>AVALIADO POR CONSUMIDORES</p></section>
 			</div>
 		</div><!--FECHA O CONTAINER FIXO-->
 
 
-		<button class="botao-flutuante" onclick="togglePopup()">
-		<img src="../assets/midia/logo-whatsapp-botao.webp" alt="Botão 1">
-		PEDIR AGORA</button>
+
   
 
 		
 
-	<div class="popupPedido" id="popup" data-whatsapp="55999999999">
-		<div class="popup-content">
-
-
-    <div id="step1">
-      <div class="category-buttons" id="categoryButtons"></div>
-      <div class="items" id="items"></div><br>
-      <div class="total" id="total"></div>
-      <button class="btn" onclick="nextStep()">Continuar</button>
-    </div>
-
-    <div id="step2" class="form-section">
-      <button class="btn" onclick="prevStep()">Voltar</button>
-      <h3>Resumo do Pedido</h3>
-      <div id="pedidoResumo"></div><br>
-      <input type="text" id="nome" placeholder="Nome completo" required />
-      <input type="text" id="cpf" placeholder="CPF" />
-      <input type="text" id="endereco" placeholder="Endereço" required />
-      <input type="text" id="numero" placeholder="Número e bloco/apartamento" required />
-      <input type="text" id="bairro" placeholder="Bairro" required />
-      <select id="pagamento" required>
-        <option value="">Selecione a forma de pagamento</option>
-        <option value="Dinheiro">Dinheiro</option>
-        <option value="Cartão">Cartão</option>
-        <option value="Pix">Pix</option>
-      </select>
-      <textarea id="observacao" placeholder="Observação do pedido"></textarea>
-      <button class="btn" onclick="enviarPedido(event)">Enviar</button>
-    </div>
-  </div>
-</div>
-  <script>
-    const categorias = {
-      "Doces": [{ nome: "Brigadeiro", valor: 2 }],
-      "Salgados": [{ nome: "Coxinha", valor: 5 }],
-      "Bebidas": [{ nome: "Suco", valor: 4 }]
-    };
-  </script>
+	
 
  
 </div><!-- FINAL DA DIV DO BODY-->
@@ -354,8 +313,8 @@
 	<!-- *********** RODAPÉ ************-->
 	<div>
 		<footer>
+      <a href="https://danschaidtdev.github.io/design-marketing-freelance/" target="_blank">Criado por Dan Schaidt Profissional Freelancer.</a>
 			
-			Criado por Dan Schaidt Profissional Freelancer.
 		</footer>
 	</div>
 	
