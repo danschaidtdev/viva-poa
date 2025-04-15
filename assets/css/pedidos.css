@@ -146,6 +146,7 @@ body {
  
 
   /* Container de formulário (step2) */
+
 .form-section {
   display: flex;
   flex-direction: column;

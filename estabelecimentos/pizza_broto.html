@@ -284,37 +284,43 @@
 
 		
 
-	<div class="popupPedido" id="popup" data-whatsapp="55999999999">
-		<div class="popup-content">
-
-
-    <div id="step1">
-      <div class="category-buttons" id="categoryButtons"></div>
-      <div class="items" id="items"></div><br>
-      <div class="total" id="total"></div>
-      <button class="btn" onclick="nextStep()">Continuar</button>
-    </div>
-
-    <div id="step2" class="form-section">
-      <button class="btn" onclick="prevStep()">Voltar</button>
-      <h3>Resumo do Pedido</h3>
-      <div id="pedidoResumo"></div><br>
-      <input type="text" id="nome" placeholder="Nome completo" required />
-      <input type="text" id="cpf" placeholder="CPF" />
-      <input type="text" id="endereco" placeholder="Endereço" required />
-      <input type="text" id="numero" placeholder="Número e bloco/apartamento" required />
-      <input type="text" id="bairro" placeholder="Bairro" required />
-      <select id="pagamento" required>
-        <option value="">Selecione a forma de pagamento</option>
-        <option value="Dinheiro">Dinheiro</option>
-        <option value="Cartão">Cartão</option>
-        <option value="Pix">Pix</option>
-      </select>
-      <textarea id="observacao" placeholder="Observação do pedido"></textarea>
-      <button class="btn" onclick="enviarPedido(event)">Enviar</button>
-    </div>
-  </div>
-</div>
+		<div class="popupPedido" id="popup" data-whatsapp="55999999999">
+			<div class="popup-content">
+		  
+			  <!-- Etapa 1: Escolha dos itens -->
+			  <div id="step1">
+				<div class="category-buttons" id="categoryButtons"></div>
+				<div class="items" id="items"></div><br>
+				<div class="total" id="total"></div>
+				<button class="btn" onclick="nextStep()">Continuar</button>
+			  </div>
+		  
+			  <!-- Etapa 2: Dados do cliente (inicialmente escondido) -->
+			  <div id="step2" class="form-section" style="display: none;">
+				<button class="btn" onclick="prevStep()">Voltar</button>
+				<h3>Resumo do Pedido</h3>
+				<div id="pedidoResumo"></div><br>
+		  
+				<input type="text" id="nome" placeholder="Nome completo" required />
+				<input type="text" id="cpf" placeholder="CPF" />
+				<input type="text" id="endereco" placeholder="Endereço" required />
+				<input type="text" id="numero" placeholder="Número e bloco/apartamento" required />
+				<input type="text" id="bairro" placeholder="Bairro" required />
+		  
+				<select id="pagamento" required>
+				  <option value="">Selecione a forma de pagamento</option>
+				  <option value="Dinheiro">Dinheiro</option>
+				  <option value="Cartão">Cartão</option>
+				  <option value="Pix">Pix</option>
+				</select>
+		  
+				<textarea id="observacao" placeholder="Observação do pedido"></textarea>
+				<button class="btn" onclick="enviarPedido(event)">Enviar</button>
+			  </div>
+		  
+			</div>
+		  </div>
+		  
   <script>
     const categorias = {
       "Doces": [{ nome: "Brigadeiro", valor: 2 }],
