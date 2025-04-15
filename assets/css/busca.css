@@ -90,7 +90,9 @@
     background: var(--cor-clara);
   }
   .card-resultado h2 {
+    background-color: var(--cor-cinza);
     font-size: 18px;
+    color: var(--cor-clara);
     margin: 0;
   }
   .card-resultado p {
@@ -99,5 +101,5 @@
   
   .imagem-resultado img{
     width: 100%;
-    max-width: 150px;
+    max-width: 350px;
   }
