@@ -347,7 +347,7 @@ footer{
 .PlanoDeFundo{
 	
 	/*background-image: url("../midia/teste-fundo.jpg");*/
-	background: var(--cor-azul);
+	background: var(--cor-vermelho);
 	/*background-size: 100vw ; /* ajusta a largura e mantém proporção */
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -467,7 +467,7 @@ footer{
 	text-shadow: 0 0 3px var(--cor-cinza);
   }
 	.textoPopup .chamadaSub{
-		color: var(--cor-azul);
+		color: var(--cor-escura);
 		text-shadow: 0 0 1px var(--cor-cinza);
 }
 .textoPopup button{
