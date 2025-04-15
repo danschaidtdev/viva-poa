@@ -116,23 +116,21 @@ strong{
 }
 
 .mensagem {
-	white-space: nowrap;
-	font-size: 60px;
+	font-size: clamp(24px, 6vw, 60px);
 	color: var(--cor-escura);
 	text-shadow: 1px 1px 5px var(--cor-clara);
 	background-color: color-mix(in srgb, var(--cor-clara) 80%, transparent);
-	padding: 5px;
+	padding: 10px 20px;
 	border-radius: 15px;
-	width: 100vw;
-	overflow: visible;
-	margin: 5%;
+	width: 90%;
+	max-width: 1000px;
+	margin: 5% auto;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
 	transition: font-size 0.4s ease, padding 0.4s ease, transform 0.4s ease;
-
-
-
-	/* Transição suave para ajuste de fontes e outros parâmetros */
-	transition: font-size 0.4s ease, padding 0.4s ease, transform 0.4s ease;
-}
+  }
+  
 
 
 
