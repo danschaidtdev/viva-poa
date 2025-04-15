@@ -93,7 +93,8 @@
     background-color: var(--cor-cinza);
     font-size: 18px;
     color: var(--cor-clara);
-    margin: 0;
+    padding: 10px;
+    border-radius: 10px;
   }
   .card-resultado p {
     color: var(--cor-escura);
