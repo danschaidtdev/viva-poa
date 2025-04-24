@@ -1,0 +1,217 @@
+:root{
+	/*Definição de variáveis*/
+	--cor-clara: #f6f6f6;
+	--cor-azul: #4FADE1; /* azul */
+	--cor-vermelho: #E74C3C; /*vermelho*/
+	--cor-cinza: #5A5A58; /*cinza*/
+	--cor-escura: #1E1E1C; /*cinza escuro*/
+    --cor-escura-rgba: 54, 53, 53; /* forma RGB pura */
+}
+
+
+.categoria, .produto {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s, background 0.3s;
+  }
+  
+  
+  .categoria.selecionado, .produto.selecionado {
+    opacity: 1;
+    background: var(--cor-vermelho);
+    color: var(--cor-clara);
+  }
+  
+  .produto {
+    background: var(--cor-cinza);
+  }
+  
+
+  
+  /* Oculta o checkbox */
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Container de categorias em coluna */
+  #categoriasContainer {
+   
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+  }
+  
+  /* Agrupamento de categoria + produtos */
+  .categoria-bloco {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .produtos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+  }
+  
+  
+ 
+  
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--cor-escura-rgba), 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9997;
+  }
+  
+  .popup-conteudo {
+    background: var(--cor-clara);
+    padding: 100px;
+    border-radius: 10px;
+    width: 90%;
+    min-width: 350px;
+    height: 80%;
+  }
+  
+  
+  .blocoBalao {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;           /* Permite quebra de linha */
+    justify-content: flex-start; /* Alinha os itens da esquerda para a direita */
+    gap: 10px;
+    padding: 10px;
+    
+    
+  }
+  
+  
+
+  .balao {
+    margin: 0;
+    background-color: var(--cor-cinza);
+    opacity: 0.6;
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 25px;
+    display: inline-block;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+    
+  }
+  
+  .balao.selecionado {
+    opacity: 1;
+    background-color: var(--cor-azul);
+    color: var(--cor-clara);
+  }
+  
+  #categoriasContainer {
+    
+    height: auto;
+    display: inline-block;
+    
+    
+  }
+  
+  #servicosContainer > div {
+    margin: 10px 0;
+    
+  }
+  
+  #resultado {
+    margin: 0;
+    text-align: left;
+    
+  }
+  
+  button {
+    
+    max-width: 30%;
+    padding: 3px 20px;
+    background-color: var(--cor-azul);
+    color: var(--cor-clara);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;  /* Alinha na horizontal */
+    align-items: center;      /* Alinha na vertical */
+    opacity: 0.8;
+  
+  }
+  
+ button:hover{
+  opacity: 100%;
+ }
+
+  button.btn-calcular {
+    background-color: var(--cor-vermelho);
+    color: var(--cor-clara);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    height: auto;
+  
+  }
+  
+  .btn-pdf{
+    background-color: var(--cor-azul);
+    color: var(--cor-clara);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .popup-conteudo {
+    background: var(--cor-clara);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 70%;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #servicosScrollContainer {
+    flex: 1;
+    overflow-y: auto;
+    height: 350px; /* Ajuste conforme necessário */
+    margin: 15px 0;
+    border: 1px solid var(--cor-cinza);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  
+  .rodape-popup {
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  /* ancora da página */
+  #servicos{
+    scroll-margin-top: 200px; /* ajuste conforme necessário */
+  }

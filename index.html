@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+
+  <link rel="stylesheet" href="../Viva CB/assets/css/busca.css">
+  
+  <title>Conheça mais da Cidade Baixa</title>
+</head>
+<body>
+  <h1>Busque por um local</h1>
+  <div id="busca-container">
+    <input type="text" id="busca" placeholder="Digite rua, bairro, cidade...">
+    <button id="botao-busca">Buscar</button>
+    <div class="botoes-categorias">
+      <button onclick="buscarPorCategoria('pizza')">Pizza</button>
+      <button onclick="buscarPorCategoria('lanches')">Lanches</button>
+      <button onclick="buscarPorCategoria('mercado')">Mercado</button>
+      <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
+      <button onclick="mostrarAleatorios()">Buscar Aleatórios</button>
+    </div>
+  </div>
+  <div id="resultados"></div>
+
+  <!--    JAVASCRIPT     -->
+  <script src="../Viva CB/assets/js/busca.js"></script>
+</body>
+</html>
