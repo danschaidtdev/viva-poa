@@ -15,15 +15,7 @@
     gap: 10px;
     margin-bottom: 30px;
   }
-
-  button #botao-busca{
-    background-color: var(--cor-clara);
-    color: var(--cor-vermelho);
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-  }
-
+  
   input[type="text"] {
     margin: 1%;
     padding: 10px;
