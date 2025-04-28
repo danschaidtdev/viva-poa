@@ -331,6 +331,7 @@ footer a{
     font-size: 20px;
     display: block; /* Garante que o width: 100% funcione corretamente */
     text-align: center;
+	border: none;
     border-radius: 50px;
     box-sizing: border-box; /* Garante que padding não ultrapasse largura */
     transition: 0.3s ease; /* Suaviza hover */
