@@ -16,6 +16,14 @@
     margin-bottom: 30px;
   }
 
+  #botao-busca button{
+    background-color: var(--cor-clara);
+    color: var(--cor-vermelho);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
   input[type="text"] {
     margin: 1%;
     padding: 10px;
