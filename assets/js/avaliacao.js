@@ -1,11 +1,13 @@
 // Verifica se a variável já foi declarada para evitar duplicação
 if (typeof pastaEstabelecimentos === 'undefined') {
-    const pastaEstabelecimentos = "/viva-poa/estabelecimentos/";
+    var pastaEstabelecimentos = "/viva-poa/estabelecimentos/";
   }
   
-  const arquivosEstabelecimentos = [
-    // Adicione outros arquivos aqui
-  ];
+  if (typeof arquivosEstabelecimentos === 'undefined') {
+    var arquivosEstabelecimentos = [
+      // Adicione outros arquivos aqui
+    ];
+  }
   
   window.addEventListener("DOMContentLoaded", () => {
     carregarBaloesAleatorios();
