@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+
 console.log("MENSAGEM: Força para aceitar as coisas que não posso mudar e coragem para mudar as que posso.")
 //alert("Arquivo JS carregado com sucesso!") //ALERTA POP-UP
 
@@ -78,6 +81,4 @@ function scrollGaleria(direction) {
         behavior: 'smooth'
       });
     }
-
-
-    // BUSCA ESTABELECIMENTOS PELA META TAG
+  });
