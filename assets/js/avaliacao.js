@@ -22,15 +22,29 @@ window.addEventListener("DOMContentLoaded", () => {
         const baloes = doc.querySelectorAll(".baloes-container .balaoMSG");
   
         if (baloes && baloes.length > 0) {
-          const balaoAleatorio = baloes[Math.floor(Math.random() * baloes.length)].outerHTML;
-          avaliacoes.push(balaoAleatorio);
+          const balaoAleatorio = baloes[Math.floor(Math.random() * baloes.length)];
+  
+          // Extraindo o link da página para o botão "Ver Local"
+          const linkEstabelecimento = pastaEstabelecimentos + arquivo;
+  
+          // Criando o botão
+          const botao = document.createElement("a");
+          botao.href = linkEstabelecimento;
+          botao.target = "_blank";
+          botao.classList.add("estiloBotao");
+          botao.innerText = "Ver Local";
+  
+          // Adicionando o botão ao balão
+          const balaoComBotao = balaoAleatorio.outerHTML.replace("</p>", `</p>${botao.outerHTML}`);
+  
+          avaliacoes.push(balaoComBotao);
         }
       } catch (erro) {
         console.warn(`Erro ao buscar avaliação de ${arquivo}:`, erro);
       }
     }
   
-    // Exibe os balões encontrados com estrutura intacta
+    // Exibe os balões encontrados com o botão "Ver Local"
     if (avaliacoes.length > 0) {
       container.innerHTML = '<div class="baloes-container"></div>';
       const baloesContainer = container.querySelector(".baloes-container");
