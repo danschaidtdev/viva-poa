@@ -1,15 +1,4 @@
-// Verifica se a variável já foi declarada para evitar duplicação
-if (typeof pastaEstabelecimentos === 'undefined') {
-    var pastaEstabelecimentos = "/viva-poa/estabelecimentos/";
-  }
-  
-  if (typeof arquivosEstabelecimentos === 'undefined') {
-    var arquivosEstabelecimentos = [
-      // Adicione outros arquivos aqui
-    ];
-  }
-  
-  window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
     carregarBaloesAleatorios();
   });
   
@@ -19,6 +8,7 @@ if (typeof pastaEstabelecimentos === 'undefined') {
   
     container.innerHTML = "<p>Carregando avaliações...</p>";
   
+    // Obtém aleatoriamente 3 arquivos do array definido no busca.js
     const aleatorios = arquivosEstabelecimentos.sort(() => 0.5 - Math.random()).slice(0, 3);
     const secoes = [];
   
