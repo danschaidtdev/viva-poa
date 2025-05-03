@@ -34,10 +34,12 @@ window.addEventListener("DOMContentLoaded", () => {
           botao.classList.add("estiloBotao");
           botao.innerText = "Ver Local";
   
-          // Adicionando o botão ao balão
-          const balaoComBotao = balaoAleatorio.outerHTML.replace("</p>", `</p>${botao.outerHTML}`);
+          // Criando um novo conteúdo com o botão abaixo de toda a avaliação
+          const balaoComBotao = document.createElement("section");
+          balaoComBotao.classList.add("balaoMSG");
+          balaoComBotao.innerHTML = balaoAleatorio.innerHTML + `<div class="botao-container">${botao.outerHTML}</div>`;
   
-          avaliacoes.push(balaoComBotao);
+          avaliacoes.push(balaoComBotao.outerHTML);
         }
       } catch (erro) {
         console.warn(`Erro ao buscar avaliação de ${arquivo}:`, erro);
