@@ -1,39 +1,48 @@
 window.addEventListener("DOMContentLoaded", () => {
-    carregarBaloesAleatorios();
+    carregarMultiplasAvaliacoes();
   });
   
-  async function carregarBaloesAleatorios() {
-    const container = document.querySelector(".baloes-container");
-    if (!container) return;
-  
+  async function carregarMultiplasAvaliacoes() {
+    const container = document.getElementById("avaliacao-destaque");
     container.innerHTML = "<p>Carregando avaliações...</p>";
   
-    // Obtém aleatoriamente 3 arquivos do array definido no busca.js
-    const aleatorios = arquivosEstabelecimentos.sort(() => 0.5 - Math.random()).slice(0, 3);
-    const secoes = [];
+    const paginasEmbaralhadas = [...arquivosEstabelecimentos].sort(() => 0.5 - Math.random());
+    const paginasSelecionadas = paginasEmbaralhadas.slice(0, 6); // até 6 páginas diferentes
   
-    for (const arquivo of aleatorios) {
+    const avaliacoes = [];
+  
+    for (const arquivo of paginasSelecionadas) {
       try {
         const resposta = await fetch(pastaEstabelecimentos + arquivo);
         const texto = await resposta.text();
+  
         const parser = new DOMParser();
         const doc = parser.parseFromString(texto, "text/html");
   
-        // Alvo: balão de avaliação com classe .animar (ajuste se necessário)
-        const balao = doc.querySelector("section.animar");
+        const baloes = doc.querySelectorAll(".baloes-container .balaoMSG");
   
-        if (balao) {
-          secoes.push(balao.outerHTML);
+        if (baloes && baloes.length > 0) {
+          const balaoAleatorio = baloes[Math.floor(Math.random() * baloes.length)].outerHTML;
+          avaliacoes.push(balaoAleatorio);
         }
-      } catch (e) {
-        console.warn(`Erro ao carregar ${arquivo}:`, e);
+      } catch (erro) {
+        console.warn(`Erro ao buscar avaliação de ${arquivo}:`, erro);
       }
     }
   
-    if (secoes.length > 0) {
-      container.innerHTML = secoes.join('');
+    // Exibe os balões encontrados com estrutura intacta
+    if (avaliacoes.length > 0) {
+      container.innerHTML = '<div class="baloes-container"></div>';
+      const baloesContainer = container.querySelector(".baloes-container");
+  
+      avaliacoes.forEach(html => {
+        const div = document.createElement("div");
+        div.innerHTML = html.trim(); // remove espaços antes/depois
+        const balao = div.firstElementChild;
+        if (balao) baloesContainer.appendChild(balao);
+      });
     } else {
-      container.innerHTML = "<p>Nenhuma avaliação encontrada.</p>";
+      container.innerHTML = "<p>Nenhuma avaliação disponível no momento.</p>";
     }
   }
   
