@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+
 
 
 console.log("MENSAGEM: Força para aceitar as coisas que não posso mudar e coragem para mudar as que posso.")
@@ -81,4 +81,6 @@ function scrollGaleria(direction) {
         behavior: 'smooth'
       });
     }
-  });
+
+
+    // BUSCA ESTABELECIMENTOS PELA META TAG
