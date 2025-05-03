@@ -15,8 +15,14 @@
   	<meta name="description" content="Onde ir em Porto Alegre? Conheça bares, restaurantes e o melhor do comércio local de POA">
   
 
-	<link rel="stylesheet" href="/viva-poa/assets/css/estilo.css">
-	<link rel="stylesheet" href="/viva-poa/assets/css/busca.css">
+	<!-- Carregar busca.css de forma assíncrona -->
+<link rel="preload" href="/viva-poa/assets/css/busca.css" as="style" type="text/css" crossorigin="anonymous">
+<link rel="stylesheet" href="/viva-poa/assets/css/busca.css" media="print" onload="this.media='all'">
+
+<!-- Carregar estilo.css de forma assíncrona -->
+<link rel="preload" href="/viva-poa/assets/css/estilo.css" as="style" type="text/css" crossorigin="anonymous">
+<link rel="stylesheet" href="/viva-poa/assets/css/estilo.css" media="print" onload="this.media='all'">
+
 	<link rel="stylesheet" href="/viva-poa/assets/css/produtos.css">
   	<link rel="stylesheet" href="/viva-poa/assets/css/pedidos.css">
   
