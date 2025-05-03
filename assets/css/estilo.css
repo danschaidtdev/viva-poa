@@ -149,7 +149,7 @@ strong{
 	gap: 20px;
 }
 
-#balaoMSG {
+.balaoMSG {
 	
 	background-color: var(--cor-clara);
 	opacity: 1;
