@@ -21,6 +21,9 @@ window.addEventListener("DOMContentLoaded", () => {
   
         const baloes = doc.querySelectorAll(".baloes-container .balaoMSG");
   
+        // Pegando o nome do local da meta tag "og:title"
+        const nomeEstabelecimento = doc.querySelector("meta[property='og:title']")?.content || "Nome do Estabelecimento";
+  
         if (baloes && baloes.length > 0) {
           const balaoAleatorio = baloes[Math.floor(Math.random() * baloes.length)];
   
@@ -34,10 +37,14 @@ window.addEventListener("DOMContentLoaded", () => {
           botao.classList.add("estiloBotao");
           botao.innerText = "Ver Local";
   
-          // Criando um novo conteúdo com o botão abaixo de toda a avaliação
+          // Criando o conteúdo com o nome do local acima da avaliação e o botão abaixo
           const balaoComBotao = document.createElement("section");
           balaoComBotao.classList.add("balaoMSG");
-          balaoComBotao.innerHTML = balaoAleatorio.innerHTML + `<div class="botao-container">${botao.outerHTML}</div>`;
+          balaoComBotao.innerHTML = `
+            <h3><strong>${nomeEstabelecimento}</strong></h3>
+            ${balaoAleatorio.innerHTML}
+            <div class="botao-container">${botao.outerHTML}</div>
+          `;
   
           avaliacoes.push(balaoComBotao.outerHTML);
         }
