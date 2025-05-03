@@ -16,9 +16,14 @@
   
 
 	<link rel="stylesheet" href="/viva-poa/assets/css/estilo.css">
-	<link rel="stylesheet" href="/viva-poa/assets/css/produtos.css">
-  <link rel="stylesheet" href="/viva-poa/assets/css/pedidos.css">
-  <link rel="stylesheet" href="/viva-poa/assets/css/busca.css">
+	<link rel="stylesheet" href="/viva-poa/assets/css/busca.css">
+	<!-- CSS de Produtos - Pouco importante -->
+	<link rel="preload" href="/viva-poa/assets/css/produtos.css" as="style" type="text/css" crossorigin="anonymous">
+	<link rel="stylesheet" href="/viva-poa/assets/css/produtos.css" media="print" onload="this.media='all'">
+  	<!-- CSS de Pedidos - Pouco importante -->
+	<link rel="preload" href="/viva-poa/assets/css/pedidos.css" as="style" type="text/css" crossorigin="anonymous">
+	<link rel="stylesheet" href="/viva-poa/assets/css/pedidos.css" media="print" onload="this.media='all'">
+  
 	
 </head>
 <body>
@@ -297,11 +302,11 @@
 </div><!-- FINAL DA DIV DO BODY-->
 
     <!--    JAVASCRIPT     -->
-  <script src="/viva-poa/assets/js/script.js"></script>
-	<script src="/viva-poa/assets/js/popup.js"></script>
-	<script src="/viva-poa/assets/js/busca.js"></script>
-	<script src="/viva-poa/assets/js/avaliacao.js"></script>
-	<script src="/viva-poa/assets/js/pedido.js"></script>
+  <script src="/viva-poa/assets/js/script.js" async></script>
+	<script src="/viva-poa/assets/js/popup.js" async></script>
+	<script src="/viva-poa/assets/js/busca.js" defer></script>
+	<script src="/viva-poa/assets/js/avaliacao.js" defer></script>
+	<script src="/viva-poa/assets/js/pedido.js" defer></script>
 	
 
 
