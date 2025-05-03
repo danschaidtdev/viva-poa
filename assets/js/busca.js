@@ -62,7 +62,10 @@ function mostrarResultados(resultados) {
   container.innerHTML = "";
 
   if (resultados.length === 0) {
-    container.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+    const mensagem = document.createElement("p");
+    mensagem.textContent = "Nenhum resultado encontrado.";
+    mensagem.style.color = "var(--cor-clara)";  // Definir a cor clara para a mensagem
+    container.appendChild(mensagem);
     return;
   }
 
