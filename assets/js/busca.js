@@ -63,7 +63,7 @@ function mostrarResultados(resultados) {
 
   if (resultados.length === 0) {
     const mensagem = document.createElement("p");
-    mensagem.textContent = "Nenhum resultado encontrado.";
+    mensagem.textContent = "Mais resultados em breve!";
     mensagem.style.color = "var(--cor-clara)";  // Definir a cor clara para a mensagem
     container.appendChild(mensagem);
     return;

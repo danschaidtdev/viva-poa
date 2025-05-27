@@ -317,13 +317,19 @@ footer a{
 	box-sizing: border-box; /* garante que o padding não estoure o layout */
 }
 
-
-.botaoNav{
+.navegador{
+	width: 100%;
+	height: 5%;
+	padding: 3%;
+}
+button .botaoNav{
 	display: flex;
 	margin-top: 1%;
 	padding: 20px;
 	background-color: var(--cor-clara);
 	color: var(--cor-escura);
+	border: none;
+	border-radius: 10px;
 	
 }
 
