@@ -322,7 +322,7 @@ footer a{
 	height: 5%;
 	padding: 3%;
 }
-button .botaoNav{
+#botaoNav button{
 	display: flex;
 	margin-top: 1%;
 	padding: 20px;
