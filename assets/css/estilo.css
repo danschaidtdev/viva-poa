@@ -318,7 +318,14 @@ footer a{
 }
 
 
-  
+.botaoNav{
+	display: flex;
+	margin-top: 1%;
+	padding: 20px;
+	background-color: var(--cor-clara);
+	color: var(--cor-escura);
+	
+}
 
 	 
 .estiloBotao {
