@@ -41,7 +41,7 @@ async function buscarMetaTags(filtro, listaEspecifica = null) {
 
       const title = doc.querySelector("meta[property='og:title']")?.content || "Sem título";
       const desc = doc.querySelector("meta[name='description']")?.content || "Sem descrição";
-      const imagem = document.querySelector("meta[property='og:image']")?.content 
+      const imagem = doc.querySelector("meta[property='og:image']")?.content 
       || `${location.origin}/viva-poa/assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp`;
     
       const conteudo = `${title} ${desc}`.toLowerCase();
