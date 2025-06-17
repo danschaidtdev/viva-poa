@@ -530,18 +530,18 @@ footer a{
 
 #popupPixCopiado {
   position: fixed;
-  bottom: 20px;
+  bottom: 30%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
+  background-color: var(--cor-vermelho);
+  color: var(--cor-clara);
   padding: 20PX;
   border-radius: 8px;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 1000;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 #popupPixCopiado.mostrar {
