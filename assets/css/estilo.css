@@ -328,7 +328,7 @@ footer a{
 	padding: 20px;
 	background-color: var(--cor-clara);
 	color: var(--cor-escura);
-	border-bottom: 1 rgba(255, 255, 255, 0.952);
+	border-bottom: 1px groove rgba(255, 255, 255, 0.952);
 	border-radius: 10px;
 	
 }
