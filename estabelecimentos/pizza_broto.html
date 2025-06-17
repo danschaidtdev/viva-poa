@@ -12,7 +12,7 @@
 
 	<!-- Meta tags que o JS vai buscar -->
 	<meta property="og:title" content="Meu Broto Pizzaria">
-  	<meta name="description" content="NOVIDADE! Pizza perto com massa Artesanal em Porto Alegre Cidade Baixa rua João Alfredo, sabores doces e salgados em tamanho broto a partir de R$ 20,00.">
+  	<meta name="description" content="NOVIDADE! Pizza perto com massa Artesanal em Porto Alegre Cidade Baixa rua João Alfredo, sabores doces e salgados em tamanho broto- Peça online.">
 	<meta property="og:image" content="/viva-poa/assets/midia/banner-padrao-viva-poa.webp">
 
 	<link rel="stylesheet" href="../assets/css/estilo.css">
@@ -31,19 +31,34 @@
 				<button id="voltar" onclick="window.location.href='../index.html'">
 				Pesquisar outros lugares
 				</button>
+				<button onclick="copiarChavePix()">
+				Doar ao Projeto
+				</button>
+				<div id="popupPixCopiado">Chave Pix copiada!</div>
 			</nav>
 		</header>
+		
+		<!--JS BOTAO DE DOAÇÃO-->
+		
+		
 
-			<div class="banner">
-				<img src="https://f.i.uol.com.br/fotografia/2022/11/22/1669127776637cde60761ab_1669127776_3x2_rt.jpg" alt="">
-				<div class="mensagem">
-				
-					<h1>Pizzaria <strong>Meu Broto</strong> em Porto Alegre</h1>
 
-				</div>
-			</div>
+			<!--        TAGS        -->
+			<section class="tag"> 
+			
+				<span class="blocoTag">onde ir em porto alegre</span>
+				<span class="blocoTag">poa</span>
+				<span class="blocoTag">cidade baixa</span>
+				<span class="blocoTag">joao alfredo</span>
+				<span class="blocoTag">cb</span>
+			</section>
+			
+		<!--TEXTO INICIAL COM SEO-->
+		<section class="blocoTitulos animar" data-delay="0.2s" >
+			<h1> Avaliação e recomendação sobre a <strong>Pizzaria Meu Broto em Porto Alegre</strong></h1>
+		</section>
 	
-		</header>
+	
 	</div>	
 	
 	<!-- POP UP INICIAL-->
@@ -78,43 +93,20 @@
 			Orçar Investimento agora
 		</button>  -->
 
-			<!--        TAGS        -->
-			<section class="tag"> 
-				<strong>palavras-chave: </strong><br>
-				<p class="blocoTag"><strong>melhor pizza</strong></p>
-				<p class="blocoTag"><strong>doce</strong></p>
-				<p class="blocoTag"><strong>salgada</strong></p>
-				<p class="blocoTag"><strong>porto alegre</strong></p>
-				<p class="blocoTag"><strong>cidade baixa</strong></p>
-				<p class="blocoTag"><strong>joao alfredo</strong></p>
-				<p class="blocoTag"><strong>cb</strong></p>
-				<!--<p class="blocoTag"><strong>site próprio</strong></p>
-				<p class="blocoTag"><strong>automação</strong></p>
-				<p class="blocoTag"><strong>planilhas</strong></p>-->
-			</section>
 			
-		<!--TEXTO INICIAL COM SEO-->
-		<section class="blocoTitulos animar" data-delay="0.2s" >
-			<h1> <strong>Massa artesanal perfeita!</strong> Recheio na medida para satisfazer o seu desejo de pizza em POA.</h1>
-		</section>
-
-		
 			
 				
 		<!--  LANDING PAGE INICIAL-->	
 
-		<div>
-			<h2 class="chamadaSub animar" data-delay="0.3s">
-			  Opinião e Avaliação 
-			</h2>
-			<p>Dan Schaidt</p>
+		<div>		
+			<p class="chamadaSub animar" data-delay="0.3s">Avaliado por Dan Schaidt</p>
 		  
 
 		<!--  BENEFICIOS  -->
 			<div class="baloes-container">
 			  <section class="balaoMSG" class="animar" data-delay="1.1s">
-				<h3><strong>Pizza broto na medida certa!</strong></h3>
-				<p>
+				<h2><strong>Pizza broto na medida certa!</strong></h2>
+				<p style="color: var(--cor-escura);">
 					A massa artesanal da Pizzaria Meu Broto é o grande destaque do novo point, lugar perfeito para comer depois da aula, com ótimo custo-benefício e um atendimento sempre excepcional.
 					Espaço ideal para reunir mais pessoas ou ir sozinho.
 				</p>
@@ -124,6 +116,13 @@
 			  </section>
 			  
 			</div>
+			<div id="botaoNav">
+			<button onclick="location.href='#endereco'" 	>
+				Ver mais Informações
+			</button></div>
+			
+
+
 		  </div>
 		  
 
@@ -137,49 +136,49 @@
 			
 			
 			
-		  <!-- SIMULA CHAT E SMARTPHONE 
-		  <h3 class="chamadaSub animar" data-delay="0.3s">
-			  Escolha entre os nossos sabores e peça online.
+		  <!-- SIMULA CHAT E SMARTPHONE -->
+		  <h3 style="color: var(--cor-escura);" class="chamadaSub animar" data-delay="0.3s">
+			  Projeto sem fins lucrativos Viva POA.
 			</h3>
 		  
 		  
 		<div class="imagemFeed" >
 			
 			<section class="imagemFeed animar" data-delay="0.1s">
-				<img src="https://lh3.googleusercontent.com/geougc-cs/AIHozJKcWSdhCtC1__bN9pDzbbcpwX1EJN2EoLUc00D0WvWcoxZrRldr70fID14D3HYHMRi3mhaS1StEwG3NuPm8KxOPo62e10CzOZNtuA2k5fU9rOGnA3Wr1EQuVQ3yZQxteNE0p4eY=s2732-w2732-h1282" alt="Sabor de pizza da pizzaria meu broto em proto alegre">
+				<img src="../assets/midia/assessoria-marketing-design-porto alegre-perto.webp" alt="Fundador da Viva POA projeto sem fins lucrativos.">
 			</section>
 		  
 			<div class="blocoTitulos animar" data-delay="0.3s">
 			  <section id="fundo" class="animar" data-delay="0.5s">
-				<h3>Que bom ver você por aqui.</h3>
-				Veja nossos sabores de pizza e depois que escolher fale comigo pelo whatsapp!
-				<p>Broto</p>
+				<h3>O projeto Viva POA</h3>
+				<p>Tem como objetivo dar uma alternativa aos negócios locais para se posicionar de forma visível na internet de forma gratuita.</p>
 			  </section>
 		  
 			  <section id="fundo" class="animar" data-delay="0.7s">
-				<h4><strong>Pizzas Doces</strong></h4>
-				Chocolate Preto;<br>
-				Chocolate ;<br>
-				Chocolate Amendoim com Chocolate.
-				<p>Broto</p>
+				<h4><strong>Doe e incentive o projeto</strong></h4>
+				<p>Com doações essa ideia tem chance de crescer e se tornar maior, quem sabe até nacional e contemplar outras cidades.</p>
 			  </section>
 			  
 			  <section id="fundo" class="animar" data-delay="0.7s">
-				<h4><strong>Pizzas Salgadas</strong></h4>
-				Frango com Catupiry;<br>
-				Calabresa;<br>
-				Lombo com Cheddar.
-				<p>Broto</p>
+				<h4><strong>Por que apoiar?</strong></h4>
+					<p>Já é sabido que os aplicativos de entrega cobram altas taxas, tanto dos estabelecimentos quanto de você, cliente final.</p>
+					<p>Este projeto surge como uma alternativa para reduzir essas cobranças abusivas, causadas pelo monopólio dos grandes apps.</p>
+				<p>Dan Schaidt</p>
 			  </section>
 		  
 			  <img class="animar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTNrFIuEKUtIoQKbIC3BEoDnIO9g2OzKDJTg&s" alt="Meu broto pizzaria">
 			</div>
-		  </div>-->
+
+			<div id="botaoNav">
+				<button ></button>
+			</div>
+			
+		  </div>
 		  
 			
 			
 		  <!-- PERGUNTAS FREQUENTES -->
-		<h3 id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes (FAQ)</h3>
+		<h3 id="endereco" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes (FAQ)</h3>
 
 		<!--FORMAS DE PAGAMENTO-->
 
@@ -240,8 +239,9 @@
 			<div class="galeria-wrapper">
 					<button class="btn-scroll btn-left" onclick="scrollGaleria(-1)">&#9664;</button>
 					<div class="galeria" id="galeria">
-				<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-calabresa-porto-alegre.webp" alt="Imagem 1">
-				<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-queijo-porto-alegre.webp" alt="Imagem 2">
+				<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-calabresa-porto-alegre.webp" alt="Imagem de pizza de calabresa, pizzaria em porto alegre na cidade baixa">
+				<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-queijo-porto-alegre.webp" alt="Imagem de pizza de quijo, pizzaria em porto alegre na cidade baixa">
+				<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-lombo-catupiry-porto-alegre.webp" alt="Imagem de pizza de lombo com catupiry, pizzaria em porto alegre na cidade baixa">
 			</div>
 					<button class="btn-scroll btn-right" onclick="scrollGaleria(1)">&#9654;</button>
 				  </div>

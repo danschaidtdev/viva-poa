@@ -52,3 +52,23 @@ function scrollGaleria(direction) {
     behavior: 'smooth'
   });
 }
+
+
+//COPIA CHAVE PARA DOAÇÃO
+function copiarChavePix() {
+  const chave = "c2d1a43a-70c1-43fc-8b4c-efa051592740";
+
+  navigator.clipboard.writeText(chave).then(() => {
+    console.log("Texto copiado com sucesso!"); // Veja no console do navegador
+    const popup = document.getElementById("popupPixCopiado"); // Corrigido: getElementById
+
+    popup.classList.add("mostrar");
+
+    setTimeout(() => {
+      popup.classList.remove("mostrar");
+    }, 2000);
+  }).catch((err) => {
+    console.error("Erro ao copiar a chave Pix:", err);
+  });
+}
+
