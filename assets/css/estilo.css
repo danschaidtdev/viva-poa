@@ -326,10 +326,11 @@ footer a{
 	display: flex;
 	margin-top: 1%;
 	padding: 20px;
-	background-color: var(--cor-clara);
-	color: var(--cor-escura);
-	border-bottom: 1px groove rgba(255, 255, 255, 0.952);
-	border-radius: 10px;
+	/*background-color: var(--cor-clara);*/
+	color: var(--cor-clara);
+	font-size: 15px;
+	border-bottom: 2px groove rgba(255, 255, 255, 0.952);
+	border-radius: 50px;
 	
 }
 
