@@ -331,7 +331,7 @@ footer a{
 	font-size: 15px;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.952);
 	border-radius: 50px;
-	
+	pointer-events: auto;
 }
 
 	 
