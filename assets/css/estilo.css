@@ -487,7 +487,7 @@ a {
 	transform: translate(-50%, -50%); /* centraliza perfeitamente */
 	justify-content: center;
 	align-items: center;
-	z-index: 9999;
+	z-index: 9995;
 	box-shadow: 0 2px 30px var(--cor-cinza);
   }
   
@@ -544,13 +544,27 @@ a {
 	opacity: 1;
 }
 
+#botaoDoa button{
+	background-color: var(--cor-escura);
+	font-size: 15px;
+	color: var(--cor-clara);
+	border: none; /* remove todas as bordas */
+	border-bottom: 2px solid var(--cor-clara); /* apenas linha inferior */
+	border-radius: 50px; /* arredonda só os cantos de baixo */
+	padding: 15px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center; /* centraliza o botão horizontalmente */
+	margin-left: 25%;
+}
+
 
 
 /************	POPUP BOTAO DE DOAÇÃO	***********************/
 
 #popupPixCopiado {
   position: fixed;
-  bottom: 30%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--cor-vermelho);
