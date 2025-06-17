@@ -349,9 +349,9 @@ a {
 
 }
 #botaoForm{
-	background-color: var(--cor-vermelho);
+	background-color: var(--cor-escura);
 	font-size: 15px;
-	color: var(--cor-clara);
+	color: var(--cor-escura);
 	border: none; /* remove todas as bordas */
 	border-bottom: 2px solid var(--cor-clara); /* apenas linha inferior */
 	border-radius: 50px; /* arredonda só os cantos de baixo */
@@ -363,10 +363,7 @@ a {
 }
 
 #botaoForm:hover{
-	background-color: var(--cor-clara);
-	border-bottom: 2px solid var(--cor-escura);
-	color: var(--cor-escura);
-	
+	background-color: var(--cor-vermelho);	
 }
 
 	 
