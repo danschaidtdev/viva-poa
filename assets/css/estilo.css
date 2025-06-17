@@ -351,7 +351,7 @@ a {
 #botaoForm{
 	background-color: var(--cor-escura);
 	font-size: 15px;
-	color: var(--cor-escura);
+	color: var(--cor-clara);
 	border: none; /* remove todas as bordas */
 	border-bottom: 2px solid var(--cor-clara); /* apenas linha inferior */
 	border-radius: 50px; /* arredonda só os cantos de baixo */
