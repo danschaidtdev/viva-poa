@@ -345,6 +345,26 @@ footer a{
 	
 }
 
+#botaoForm{
+	background-color: var(--cor-vermelho);
+	font-size: 15px;
+	color: var(--cor-clara);
+	border: none; /* remove todas as bordas */
+	border-bottom: 2px solid var(--cor-clara); /* apenas linha inferior */
+	border-radius: 50px; /* arredonda só os cantos de baixo */
+	padding: 15px;
+	position: relative;
+	cursor: pointer;
+	margin-right: 5px;
+	
+}
+
+#botaoForm button:hover{
+	background-color: var(--cor-clara);
+	border-bottom: 2px solid var(--cor-escura);
+	color: var(--cor-escura);
+	
+}
 
 	 
 .estiloBotao {
