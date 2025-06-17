@@ -345,7 +345,7 @@ footer a{
 	
 }
 
-#botaoForm{
+#botaoForm a{
 	background-color: var(--cor-vermelho);
 	font-size: 15px;
 	color: var(--cor-clara);
@@ -356,10 +356,11 @@ footer a{
 	position: relative;
 	cursor: pointer;
 	margin-right: 5px;
+	text-decoration: none;
 	
 }
 
-#botaoForm button:hover{
+#botaoForm:hover{
 	background-color: var(--cor-clara);
 	border-bottom: 2px solid var(--cor-escura);
 	color: var(--cor-escura);
