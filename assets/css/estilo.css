@@ -329,7 +329,7 @@ footer a{
 	/*background-color: var(--cor-clara);*/
 	color: var(--cor-clara);
 	font-size: 15px;
-	border-bottom: 2px groove rgba(255, 255, 255, 0.952);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.952);
 	border-radius: 50px;
 	
 }
