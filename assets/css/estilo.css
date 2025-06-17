@@ -323,15 +323,16 @@ footer a{
 	padding: 1%;
 }
 #botaoNav button{
+	background-color: var(--cor-escura);
+    border-bottom: 2px solid var(--cor-clara);
+    border-radius: 20px;
+    padding: 0 20px;
+    position: relative;
 	display: flex;
-	margin-top: 1%;
-	padding: 20px;
 	/*background-color: var(--cor-clara);*/
 	color: var(--cor-clara);
 	font-size: 15px;
-	border-bottom: 2px solid rgba(255, 255, 255, 0.952);
-	border-radius: 50px;
-	pointer-events: auto;
+	cursor: pointer;
 }
 
 	 
