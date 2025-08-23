@@ -76,6 +76,7 @@
 
   .resultado-info p {
     margin: 0 0 10px 0;
+    color: var(--cor-escura);
   }
 
   .resultado-info a {
