@@ -68,7 +68,6 @@ strong{
 }
 
 img {
-  aspect-ratio: 5 / 5;
   width: 100%;
   height: auto;
 }
@@ -804,6 +803,7 @@ a {
     }
 
     .galeria img {
+		aspect-ratio: 9 / 16;
       flex: 0 0 auto;
       width: 100%;
       height: auto;
