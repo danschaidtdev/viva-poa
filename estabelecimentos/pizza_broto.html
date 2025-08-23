@@ -63,7 +63,7 @@
 	
 	<!-- POP UP INICIAL-->
 	<div id="popupInicio" class="blocoPopup"> <!--ID DO POPUP.JS-->
-		<img src="../assets/midia/popup-viva-poa-feira.webp" alt="Doe ao projeto">
+		<img src="../assets/midia/popup-viva-poa-feira.webp" alt="Doe ao projeto" loading="lazy">
 		
 		<!-- BOTÃO AQUI -->
 		<span class="botaoPopup animar" data-delay="0.3s" role="button" aria-label="Fechar popup" tabindex="0">Fechar</span>
@@ -110,7 +110,8 @@
 		<button class="btn-scroll btn-left" onclick="scrollGaleria(-1)">&#9664;</button>
 
 		<div class="galeria" id="galeria">
-			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-calabresa-porto-alegre.webp" alt="Imagem de pizza de calabresa, pizzaria em porto alegre na cidade baixa">
+			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-calabresa-porto-alegre.webp" alt="Imagem de pizza de calabresa, pizzaria em porto alegre na cidade baixa" fetchpriority="high"
+  			decoding="async">
 			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-queijo-porto-alegre.webp" alt="Imagem de pizza de queijo, pizzaria em porto alegre na cidade baixa" >
 			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-lombo-catupiry-porto-alegre.webp" alt="Imagem de pizza de lombo com catupiry, pizzaria em porto alegre na cidade baixa" >
 			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-porto-alegre-broto-nozes-com-chocolate.webp" alt="Imagem de pizza de nozes com chocolate, pizzaria em porto alegre na cidade baixa" >
@@ -139,7 +140,7 @@
 		<!--  BENEFICIOS  -->
 			<div class="baloes-container">
 			  <section class="balaoMSG" class="animar" data-delay="1.1s">
-				<h3><strong>Muito Boa</strong></h2>
+				<h3><strong>Muito Boa</strong></h3>
 				<p style="color: var(--cor-escura);">
 					"Muito boa as pizzas,o atendimento é super rápido e chega bem quentinha."
 				</p>
@@ -147,7 +148,7 @@
 				
 			  </section>
 			  <section class="balaoMSG" class="animar" data-delay="1.1s">
-				<h3><strong>Recomendo</strong></h2>
+				<h3><strong>Recomendo</strong></h3>
 				<p style="color: var(--cor-escura);">
 					"Pizza mais saborosa da Cidade Baixa!!
 					Extremamente gostosa, bons condimentos, massa fina maravilhosa. Recomendo a pizza de pepperoni e basca. Atendimento impecável e cerveja gelada. Recomendo e voltarei mais vezes."
