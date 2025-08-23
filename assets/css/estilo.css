@@ -42,6 +42,7 @@
 	background: var(--cor-escura);
 	margin: 0; /* zera margens externas que podem causar desalinhamento */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	
 	color: var(--cor-escura);
 
 	
@@ -828,6 +829,62 @@ a {
     .btn-scroll:hover {
       background-color: var(--cor-vermelho);
     }
+
+/******************* TELE ENTREGA  *************/
+.teleEntrega {
+  margin: 3% auto;
+  width: 100%;
+  max-width: 85%;
+  background: var(--cor-vermelho);
+  color: var(--cor-clara);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+
+ 
+}
+
+/* NOVA CLASSE PARA O BOTÃO */
+.botaoPedido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background-color: #25d366; /* WhatsApp green */
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+
+  transition: transform 0.2s ease;
+}
+
+.botaoPedido img {
+  width: clamp(24px, 5vw, 36px);
+  height: auto;
+}
+
+.botaoPedido:hover {
+  transform: scale(1.05);
+}
+
+/* Animação do bloco */
+@keyframes aparecerZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 
 

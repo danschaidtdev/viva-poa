@@ -45,13 +45,21 @@ elementosAnimados.forEach((el) => observer.observe(el));
 
 // GALERIA DE IMAGENS
 function scrollGaleria(direction) {
-  const galeria = document.getElementById('galeria');
-  const scrollAmount = 320; // largura da imagem + margem
-  galeria.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth'
-  });
-}
+    const galeria = document.getElementById('galeria');
+    const imagem = galeria.querySelector('img');
+
+    if (!imagem) return;
+
+    const imagemLargura = imagem.offsetWidth;
+    const margemDireita = parseInt(getComputedStyle(imagem).marginRight) || 0;
+
+    const scrollAmount = imagemLargura + margemDireita;
+
+    galeria.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
 
 
 //COPIA CHAVE PARA DOAÇÃO

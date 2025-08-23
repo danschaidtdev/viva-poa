@@ -135,29 +135,21 @@
     border-radius: 10px;
     
     }
-
-
-
-
-  /***************************************/
-/************* MOBILE   ****************/
-@media screen and (max-width: 480px){
-
-	 .imagemSecao{
-     
-    width: 100%;
-    max-width: 200px;
-  }
-
-	
+.mapa-responsivo {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
 }
-/* Responsivo: empilha tudo em telas menores */
-@media (max-width: 768px) {
 
-	.imagemSecao{
-     
-    width: 100%;
-    max-width: 350px;
-  }
-	
+.mapa-responsivo iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
+
