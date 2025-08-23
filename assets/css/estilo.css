@@ -39,7 +39,7 @@
 
  body{
 	 
-	background: var(--cor-escura);
+	background: var(--cor-clara);
 	margin: 0; /* zera margens externas que podem causar desalinhamento */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	
@@ -159,7 +159,7 @@ strong{
 	width: 100%;
 	max-width: 300px;
 	border-radius: 50px 50px 50px 0px;
-	box-shadow: 0 0 8px var(--cor-clara);
+	box-shadow: 0 0 8px var(--cor-escura);
 	flex: 1 1 250px; /* permite que quebre automaticamente */
 }
 
@@ -257,6 +257,7 @@ strong{
 	margin-top: 5%;
 	display: flex;
 	justify-content: flex-start;
+	box-shadow: 3px 3px 15px var(--cor-escura);
 
 	/* Quebra de texto suave */
 	white-space: normal;
