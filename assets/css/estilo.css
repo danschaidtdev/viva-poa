@@ -675,7 +675,15 @@ a {
 	  
 	  
   }
-  
+  @keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.botao-flutuante.piscar {
+  animation: piscar 5s ease-in-out infinite;
+}
+
   #formulario-flutuante {
 	position: fixed;
 	bottom: 100px;

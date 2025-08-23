@@ -72,3 +72,11 @@ function copiarChavePix() {
   });
 }
 
+//BOTAO PISCA
+  window.addEventListener('DOMContentLoaded', () => {
+    const botao = document.querySelector('.botao-flutuante');
+    if (botao) {
+      botao.classList.add('piscar');
+    }
+  });
+
