@@ -115,9 +115,9 @@
 		<div class="teleEntrega animar" data-delay="0.3s">
 			<span>Que tal um lanche?</span>
 
-			<a class="botaoPedido animar" data-delay="0.3s" href="tel:+555132242919" target="_blank" loading="lazy">
+			<a class="botaoPedido animar" data-delay="0.3s" href="#contato"loading="lazy">
 				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
-				LIGAR AGORA
+				PEDIR AGORA
 			</a>
 		</div>
 
@@ -183,58 +183,61 @@
 				</div>
 				
 				
-		<!--HORÁRIO DE ATENDIMENTO-->
+		<!--HORÁRIO DE ATENDIMENTO E ENDEREÇO-->
 
 				<div class="blocoDeSecao">
-					<button onclick="toggleDescricao(this)"><h4>Qual o horário de atendimento?</h4> </button>
+					<button onclick="toggleDescricao(this)"><h4>Qual o endereço e horário de atendimento?</h4> </button>
 					<div class="descricao">
-						<ul>
+						<ul> <strong>Rua João Alfredo, 353 esquina com Rua República.</strong>
 							<li>Domingo a Quarta: 11h às 2h</li>
-
 							<li>Quinta: 11h às 4h</li>
-
 							<li>Sexta a Sábado: 11h às 5h30</li>
-
+						  </ul>
+						<ul> <strong>Rua General Lima e Silva, 453</strong>
+							<li>Domingo a Quinta: 10h às 2h</li>
+							<li>Sexta a Sábado: 10h às 5h</li>
 						  </ul>
 						  				 
 					</div>
 				</div>
-			
-			
-		<!--ENDEREÇO-->
+		<!--TELE ENTREGA-->
 
-				<div class="blocoDeSecao">
-					<button onclick="toggleDescricao(this)"><h4>Qual o endereço?</h4> </button>
+				<div class="blocoDeSecao" id="contato">
+					<button onclick="toggleDescricao(this)"><h4>Ligue e faça o seu pedido</h4> </button>
 					<div class="descricao">
-						<ul>
-
-							<li>Rua João Alfredo, 353 - Cidade Baixa, Porto Alegre - RS, 90050-230</li>
-							
-							<li>
-  <div class="mapa-responsivo">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8808432081623!2d-51.228691324446466!3d-30.040276174925665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978fe0246fc17%3A0x1cd38bde8b4c2fff!2sPapa%20Lanches%20Jo%C3%A3o%20Alfredo!5e0!3m2!1spt-BR!2sbr!4v1757801273581!5m2!1spt-BR!2sbr"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-</li>
-
-							
+						<ul> <strong>Rua João Alfredo, 353</strong>
+							<li>51 3224 2919
+								<a class="botaoPedido animar" data-delay="0.3s" href="tel:+555132242919" target="_blank" loading="lazy">
+				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
+				Ligar!
+			</a>
+							</li>
+						  </ul>
+						<ul> <strong>Rua General Lima e Silva, 453</strong>
+							<li>51 3226 4319
+								<a class="botaoPedido animar" data-delay="0.3s" href="tel:+555132264319" target="_blank" loading="lazy">
+				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
+				Ligar!
+			</a>
+							</li>
+							<li>51 3226 2438
+								<a class="botaoPedido animar" data-delay="0.3s" href="tel:+555132242438" target="_blank" loading="lazy">
+				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
+				Ligar!
+			</a>
+							</li>
 						  </ul>
 						  				 
 					</div>
-					
-				</div>	
-		
+				</div>
+	
 		
 				<!--CARDAPIO-->
 
 				<div class="blocoDeSecao">
 					<button onclick="toggleDescricao(this)"><h4>Cardápio</h4> </button>
 					
-  <div style="width: 100%; height: 100vw;">
+  <div style="width: 100%; height: 350px;">
     <iframe
         src="https://www.papalanchesepizzas.com.br/cardapio"
         allowfullscreen=""
@@ -310,9 +313,9 @@
 		
 		<!---->
 
-		<a class="botao-flutuante" href="https://api.whatsapp.com/send?phone=555199969989&text=Oi%2C%20vim%20pelo%20site%20VivaPOA%20e%20quero%20fazer%20um%20pedido." target="_blank">
+		<a class="botao-flutuante" href="#contato">
 			<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão de chamada fixa">
-			LIGAR AGORA
+			PEÇA AGORA
 		</a>
   
 
