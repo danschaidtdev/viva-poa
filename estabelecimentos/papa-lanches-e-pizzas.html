@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="icon" href="../viva-poa/assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" type="image/webp">
+	
+	<title>Papa Lanches e Pizzas Cidade Baixa</title>
+	
+	<meta name="robots" content="index, follow">
+
+	<!-- Meta tags que o JS vai buscar -->
+	<meta property="og:title" content="Papa Lanches e Pizzas">
+  	<meta name="description" content="Coma Xis, batata frita, cachorro quente, pizza, alaminuta, torrada no clássico da cidade baixa na rua João Alfredo, Peça online uma tele-entrega.">
+	<meta property="og:image" content="/viva-poa/assets/midia/banner-padrao-viva-poa.webp">
+
+	<link rel="stylesheet" href="../assets/css/estilo.css">
+	<link rel="stylesheet" href="../assets/css/pedidos.css">
+	<link rel="stylesheet" href="../assets/css/produtos.css">
+	
+</head>
+<body>
+<div>
+
+	<!-- ************* CABEÇALHO ************* -->
+
+	<div >
+		<header class="navegador">
+  			<nav id="botaoNav">
+				<button id="voltar" onclick="window.location.href='../index.html'">
+				Pesquisar outros lugares
+				</button>
+				<button onclick="copiarChavePix()">
+				Doar ao Projeto
+				</button>
+				<div id="popupPixCopiado">Chave Pix copiada!</div>
+			</nav>
+		</header>
+		
+		<!--JS BOTAO DE DOAÇÃO-->
+		
+		
+
+
+			<!--        TAGS        -->
+			<section class="tag"> 
+			
+				<span class="blocoTag">onde ir em porto alegre</span>
+				<span class="blocoTag">poa</span>
+				<span class="blocoTag">cidade baixa</span>
+				<span class="blocoTag">joao alfredo</span>
+				<span class="blocoTag">cb</span>
+			</section>
+			
+		<!--TEXTO INICIAL COM SEO-->
+		<section class="blocoTitulos animar" data-delay="0.2s" >
+			<h1>Lancheria tradicional<strong>Papa Lanches e Pizzas em Porto Alegre</strong></h1>
+		</section>
+	
+	
+	</div>	
+	
+	<!-- POP UP INICIAL-->
+	<div id="popupInicio" class="blocoPopup"> <!--ID DO POPUP.JS-->
+		<img src="../assets/midia/popup-viva-poa-feira.webp" alt="Doe ao projeto" loading="lazy">
+		
+		<!-- BOTÃO AQUI -->
+		<span class="botaoPopup animar" data-delay="0.3s" role="button" aria-label="Fechar popup" tabindex="0">Fechar</span>
+		
+		<div class="textoPopup">
+			<h3 class="chamadaSub animar" data-delay="0.3s"> Projeto VIVA Poa<br> Doe e ajude o comércio local
+			</h3>
+			<div id="botaoDoa">
+				<button onclick="copiarChavePix()">
+					Doar ao Projeto
+				</button>
+			</div>
+			
+			
+		</div>
+	</div>
+	
+	
+
+
+	</div>
+
+	<!-- ************ CORPO ************-->
+
+<div class="margemLateral"> <!-- DIV DO BODY-->
+
+
+
+			<!--   BOTAO CALCULADORA   
+		<button class="estiloBotao abrirPopupBtn" title="Orçamento Online" alt="Faça um Orçamento Online de Freelance">
+			Orçar Investimento agora
+		</button>  -->
+
+			
+			
+				
+		<!--  LANDING PAGE INICIAL-->	
+		<p class="chamadaSub animar" data-delay="0.3s">
+		Registros especiais ❤
+		</p>
+
+		<!-- IMAGENS DO RESTAURANTE -->
+		<div class="galeria-wrapper">
+		<button class="btn-scroll btn-left" onclick="scrollGaleria(-1)">&#9664;</button>
+
+		<div class="galeria" id="galeria">
+			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-calabresa-porto-alegre.webp" alt="Imagem de pizza de calabresa, pizzaria em porto alegre na cidade baixa" fetchpriority="high"
+  			decoding="async">
+			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-queijo-porto-alegre.webp" alt="Imagem de pizza de queijo, pizzaria em porto alegre na cidade baixa" >
+			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-lombo-catupiry-porto-alegre.webp" alt="Imagem de pizza de lombo com catupiry, pizzaria em porto alegre na cidade baixa" >
+			<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/pizza-porto-alegre-broto-nozes-com-chocolate.webp" alt="Imagem de pizza de nozes com chocolate, pizzaria em porto alegre na cidade baixa" >
+		</div>
+
+		<button class="btn-scroll btn-right" onclick="scrollGaleria(1)">&#9654;</button>
+		</div>
+
+		<!--TELE ENTREGA DISPONIVEL-->
+		<div class="teleEntrega animar" data-delay="0.3s">
+			<span>Que tal um lanche?</span>
+
+			<a class="botaoPedido animar" data-delay="0.3s" href="https://api.whatsapp.com/send?phone=555199969989&text=Oi%2C%20vim%20pelo%20site%20VivaPOA%20e%20quero%20fazer%20um%20pedido." target="_blank" loading="lazy">
+				<img src="../assets/midia/logo-whatsapp-botao.webp" alt="Botão do WhatsApp">
+				PEDIR AGORA
+			</a>
+		</div>
+
+
+				
+		
+		<div>		
+			<p class="chamadaSub animar" data-delay="0.3s">Avaliações no Google</p>
+		  
+
+		<!--  BENEFICIOS  -->
+			<div class="baloes-container">
+			  <section class="balaoMSG" class="animar" data-delay="1.1s">
+				<h3><strong>Muito Boa</strong></h3>
+				<p style="color: var(--cor-escura);">
+					"Muito boa as pizzas,o atendimento é super rápido e chega bem quentinha."
+				</p>
+				<p>⭐⭐⭐⭐⭐</p>
+				
+			  </section>
+			  <section class="balaoMSG" class="animar" data-delay="1.1s">
+				<h3><strong>Recomendo</strong></h3>
+				<p style="color: var(--cor-escura);">
+					"Pizza mais saborosa da Cidade Baixa!!
+					Extremamente gostosa, bons condimentos, massa fina maravilhosa. Recomendo a pizza de pepperoni e basca. Atendimento impecável e cerveja gelada. Recomendo e voltarei mais vezes."
+				</p>
+				<p>⭐⭐⭐⭐⭐</p>
+				
+			  </section>
+			</div>
+			<div id="botaoNav" style="margin-left: 30%;">
+				<button onclick="location.href='#endereco'" 	>
+					Ver mais Informações
+				</button>
+				
+				<button onclick="copiarChavePix()">
+					Doar ao Projeto
+				</button>
+			
+			</div>
+			
+
+
+		  </div>
+		  
+			
+		  <!-- PERGUNTAS FREQUENTES -->
+		<h3 id="endereco" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes (FAQ)</h3>
+
+		<!--FORMAS DE PAGAMENTO-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Quais as formas de pagamento?</h4> </button>
+					<div class="descricao">
+						<p>
+							Aceitamos várias formas de pagamento.
+						  </p>
+						  				  
+						<ul>
+							<li>Cartão de Crédito e Débito</li>
+							<li>Dinheiro</li>
+							<li>PIX</li>
+						</ul>
+					</div>
+				</div>
+				
+				
+		<!--HORÁRIO DE ATENDIMENTO-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Qual o horário de atendimento?</h4> </button>
+					<div class="descricao">
+						<ul>
+							<li>Terça a Quinta: 19h às 23h</li>
+
+							<li>Sexta a Sábado: 19h às 1h</li>
+
+						  </ul>
+						  				 
+					</div>
+				</div>
+			
+			
+		<!--ENDEREÇO-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Qual o endereço?</h4> </button>
+					<div class="descricao">
+						<ul>
+
+							<li>Rua João Alfredo, 321 - Bairro Cidade Baixa, Porto Alegre - RS, CEP 90050-230, Brasil</li>
+							
+							<li>
+  <div class="mapa-responsivo">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8855926749225!2d-51.228962425126895!3d-30.040139931075604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519790043251713%3A0xebb7250df8967847!2sPizzaria%20Meu%20Broto!5e0!3m2!1spt-BR!2sbr!4v1744615132633!5m2!1spt-BR!2sbr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</li>
+
+							
+						  </ul>
+						  				 
+					</div>
+					
+				</div>	
+		<!--ENDEREÇO-->
+
+				<div class="blocoDeSecao" style="max-height: 80vw;">
+					<button onclick="toggleDescricao(this)"><h4>Cardápio</h4> </button>
+					
+  <div class="mapa-responsivo">
+    <iframe
+      src="https://www.papalanchesepizzas.com.br/cardapio"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</li>
+
+							
+						  </ul>
+						  				 
+					</>
+					
+				</div>	
+
+
+		
+
+		<!-- SIMULA CHAT E SMARTPHONE -->
+		  <h3 style="color: var(--cor-escura);" class="chamadaSub animar" data-delay="0.3s">
+			  Patrocinador: Projeto sem fins lucrativos Viva POA.
+			</h3>
+		  
+		  
+		<div class="imagemFeed" >
+			
+			<section class="imagemFeed animar" data-delay="0.1s">
+				<img src="../assets/midia/assessoria-marketing-design-porto alegre-perto.webp" alt="Fundador da Viva POA projeto sem fins lucrativos.">
+			</section>
+		  
+			<div class="blocoTitulos animar" data-delay="0.3s">
+			  <section id="fundo" class="animar" data-delay="0.5s">
+				<h3>O projeto Viva POA</h3>
+				<p>Tem como objetivo dar uma alternativa aos negócios locais para se posicionar de forma visível na internet de forma gratuita.</p>
+			  </section>
+		  
+			  <section id="fundo" class="animar" data-delay="0.7s">
+				<h4><strong>Doe e incentive o projeto</strong></h4>
+				<p>Com doações essa ideia tem chance de crescer e se tornar maior, quem sabe até nacional e contemplar outras cidades.</p>
+			  </section>
+			  
+			  <section id="fundo" class="animar" data-delay="0.7s">
+				<h4><strong>Por que apoiar?</strong></h4>
+					<p>Já é sabido que os aplicativos de entrega cobram altas taxas, tanto dos estabelecimentos quanto de você, cliente final.</p>
+					<p>Este projeto surge como uma alternativa para reduzir essas cobranças abusivas, causadas pelo monopólio dos grandes apps.</p>
+				<p>Dan Schaidt</p>
+			  </section>
+		  
+			  <img class="animar" data-delay="0.7s" src="../assets/midia/dan-schaidt-fundador-viva-poa.webp" alt="Dan Schaidt fundador do projeto Viva POA">
+			</div>
+			
+		  </div>
+
+
+
+
+
+		<!--  IMAGEM FIXA NA TELA-->
+		<div class="containerFixos">
+			<a href="https://www.instagram.com/pizzariameubroto/" target="_blank" rel="noopener">
+				<div class="blocoFixo" style="cursor: pointer;">
+				<img src="../assets/midia/instagram-logo.webp" alt="Instagram Meu Broto Pizzaria em Porto Alegre" loading="lazy">
+				<section><p>Siga-nos</p></section>
+				</div>
+			</a>
+			<a href="https://api.whatsapp.com/send?phone=555199969989&text=Oi%2C%20vim%20pelo%20site%20VivaPOA%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">
+				<div class="blocoFixo" style="cursor: pointer;">
+				<img src="../assets/midia/pizzaria-meu-broto-joao-alfredo-cidade-baixa/meu-broto-pizzaria-porto-alegre.webp" alt="Instagram Meu Broto Pizzaria em Porto Alegre" loading="lazy">
+				</div>
+			</a>
+		</div><!--FECHA O CONTAINER FIXO-->
+
+
+		
+		<!---->
+
+		<a class="botao-flutuante" href="https://api.whatsapp.com/send?phone=555199969989&text=Oi%2C%20vim%20pelo%20site%20VivaPOA%20e%20quero%20fazer%20um%20pedido." target="_blank">
+			<img src="../assets/midia/logo-whatsapp-botao.webp" alt="Botão de whatsapp">
+			PEDIR AGORA
+		</a>
+  
+
+		
+
+		
+
+ 
+</div><!-- FINAL DA DIV DO BODY-->
+
+    <!--    JAVASCRIPT     -->
+    <script src="../assets/js/script.js"></script>
+	<script src="../assets/js/popup.js"></script>
+	<script src="../assets/js/busca.js"></script>
+	
+	<script src="../assets/js/pedido.js"></script>
+	
+
+    <noscript>Habilite o JavaScrip para acessar ao site</noscript><!--Mensagem de informação de erro-->
+	
+	
+
+	<!-- *********** RODAPÉ ************-->
+	<div>
+		<footer>
+			
+			Criado por Dan Schaidt Profissional Freelancer.
+		</footer>
+	</div>
+	
+</body>
+</html>
