@@ -259,7 +259,7 @@ img {
 	background:  var(--cor-clara);
 	border-radius: 50px;
 	padding: 15px;
-	margin-top: 5%;
+	margin-top: 60px;
 	display: flex;
 	justify-content: flex-start;
 	box-shadow: 3px 3px 15px var(--cor-escura);
