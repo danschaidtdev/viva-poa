@@ -72,6 +72,12 @@ img {
   height: auto;
 }
 
+/************LOGO VIVA POA*************************************/
+#logo img {
+    float: right;
+    margin-top: 10px;
+    max-width: 100px;
+}
 
 /*************** BANNER ANIMADO COM TEXTO *********************/
 
