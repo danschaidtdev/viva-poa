@@ -27,20 +27,26 @@
 
 	<div >
 		<div id="logo">
-			<img  src="../assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" alt="">
+			<img  src="../assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" alt="Divulgação gratuita de serviços e comércio em Porto Alegre">
 		</div>
+
 		<header class="navegador">
-			
 			
   			<nav id="botaoNav">
 				<button id="voltar" onclick="window.location.href='../index.html'">
 				Pesquisar outros lugares
 				</button>
-				<button onclick="copiarChavePix()">
+				<button onclick="location.href='#projeto-viva-poa-divulgacao-gratuita'" 	>
 				Doar ao Projeto
 				</button>
 				<div id="popupPixCopiado">Chave Pix copiada!</div>
-				<!--LOGO VIVA POA-->
+				
+				<button onclick="location.href='#endereco'" 	>
+					Ver mais Informações
+				</button>
+				
+			
+			</div>
 		
 			</nav>
 			
@@ -79,11 +85,11 @@
 		<span class="botaoPopup animar" data-delay="0.3s" role="button" aria-label="Fechar popup" tabindex="0">Fechar</span>
 		
 		<div class="textoPopup">
-			<h3 class="chamadaSub animar" data-delay="0.3s"> Projeto VIVA Poa<br> Doe e ajude o comércio local
-			</h3>
+			<span class="chamadaSub animar" data-delay="0.3s" style=" font-size: 15px;"> Projeto VIVA Poa<br><br>Divulgação online de estabelecimentos e serviços.
+			</span><br>
 			<div id="botaoDoa">
-				<button onclick="copiarChavePix()">
-					Doar ao Projeto
+				<button onclick="location.href='#projeto-viva-poa-divulgacao-gratuita'">
+					Ver + sobre o Projeto
 				</button>
 			</div>
 			
@@ -126,8 +132,8 @@
 			<span>Que tal um lanche?</span>
 
 			<a class="botaoPedido animar" data-delay="0.3s" href="#contato"loading="lazy">
-				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
-				PEDIR AGORA
+				<img src="../assets/midia/papa-lanches-e-pizzas-joao-alfredo-cidade-baixa/logo-papa-lanches-e-pizzas-porto-alegre.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
+				CARDÁPIO
 			</a>
 		</div>
 
@@ -156,16 +162,7 @@
 				
 			  </section>
 			</div>
-			<div id="botaoNav" style="margin-left: 30%;">
-				<button onclick="location.href='#endereco'" 	>
-					Ver mais Informações
-				</button>
-				
-				<button onclick="copiarChavePix()">
-					Doar ao Projeto
-				</button>
 			
-			</div>
 			
 
 
@@ -202,40 +199,24 @@
 							<li>Domingo a Quarta: 11h às 2h</li>
 							<li>Quinta: 11h às 4h</li>
 							<li>Sexta a Sábado: 11h às 5h30</li>
-						  </ul>
-						<ul> <strong>Rua General Lima e Silva, 453</strong>
-							<li>Domingo a Quinta: 10h às 2h</li>
-							<li>Sexta a Sábado: 10h às 5h</li>
-						  </ul>
-						  				 
-					</div>
-				</div>
-		<!--TELE ENTREGA-->
-
-				<div class="blocoDeSecao" id="contato">
-					<button onclick="toggleDescricao(this)"><h4>Ligue e faça o seu pedido</h4> </button>
-					<div class="descricao">
-						<ul> <strong>Rua João Alfredo, 353</strong>
 							<li>51 3224 2919
 								<a class="botaoPedido animar" data-delay="0.3s" href="tel:+555132242919" target="_blank" loading="lazy">
 				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
 				Ligar!
 			</a>
-							</li>
 						  </ul>
 						<ul> <strong>Rua General Lima e Silva, 453</strong>
+							<li>Domingo a Quinta: 10h às 2h</li>
 							<li>51 3226 4319
 								<a class="botaoPedido animar" data-delay="0.3s" href="tel:+555132264319" target="_blank" loading="lazy">
 				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
 				Ligar!
 			</a>
-							</li>
-							<li>51 3226 2438
+			<li>51 3226 2438
 								<a class="botaoPedido animar" data-delay="0.3s" href="tel:+555132242438" target="_blank" loading="lazy">
 				<img src="../assets/midia/chamada-fixa.webp" style="border-radius: 20px;" alt="Botão do WhatsApp">
 				Ligar!
 			</a>
-							</li>
 						  </ul>
 						  				 
 					</div>
@@ -265,7 +246,7 @@
 		
 
 		<!-- SIMULA CHAT E SMARTPHONE -->
-		  <h3 style="color: var(--cor-escura);" class="chamadaSub animar" data-delay="0.3s">
+		  <h3 id="projeto-viva-poa-divulgacao-gratuita" style="color: var(--cor-escura);" class="chamadaSub animar" data-delay="0.3s">
 			  Patrocinador: Projeto sem fins lucrativos Viva POA.
 			</h3>
 		  
@@ -293,6 +274,12 @@
 					<p>Este projeto surge como uma alternativa para reduzir essas cobranças abusivas, causadas pelo monopólio dos grandes apps.</p>
 				<p>Dan Schaidt</p>
 			  </section>
+
+			  <div id="botaoDoa">
+				<button onclick="copiarChavePix()">
+					Doar ao Projeto
+				</button>
+			</div>
 		  
 			  <img class="animar" data-delay="0.7s" src="../assets/midia/dan-schaidt-fundador-viva-poa.webp" alt="Dan Schaidt fundador do projeto Viva POA">
 			</div>

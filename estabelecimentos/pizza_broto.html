@@ -30,16 +30,27 @@
 			<img  src="../assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" alt="">
 		</div>
 		<header class="navegador">
+			
   			<nav id="botaoNav">
 				<button id="voltar" onclick="window.location.href='../index.html'">
 				Pesquisar outros lugares
 				</button>
-				<button onclick="copiarChavePix()">
+				<button onclick="location.href='#projeto-viva-poa-divulgacao-gratuita'" 	>
 				Doar ao Projeto
 				</button>
 				<div id="popupPixCopiado">Chave Pix copiada!</div>
+				
+				<button onclick="location.href='#endereco'" 	>
+					Ver mais Informações
+				</button>
+				
+			
+			</div>
+		
 			</nav>
+			
 		</header>
+		
 		
 		<!--JS BOTAO DE DOAÇÃO-->
 		
@@ -72,11 +83,11 @@
 		<span class="botaoPopup animar" data-delay="0.3s" role="button" aria-label="Fechar popup" tabindex="0">Fechar</span>
 		
 		<div class="textoPopup">
-			<h3 class="chamadaSub animar" data-delay="0.3s"> Projeto VIVA Poa<br> Doe e ajude o comércio local
-			</h3>
+			<span class="chamadaSub animar" data-delay="0.3s" style=" font-size: 15px;"> Projeto VIVA Poa<br><br>Divulgação online de estabelecimentos e serviços.
+			</span><br>
 			<div id="botaoDoa">
-				<button onclick="copiarChavePix()">
-					Doar ao Projeto
+				<button onclick="location.href='#projeto-viva-poa-divulgacao-gratuita'">
+					Ver + sobre o Projeto
 				</button>
 			</div>
 			
@@ -129,7 +140,7 @@
 
 			<a class="botaoPedido animar" data-delay="0.3s" href="https://api.whatsapp.com/send?phone=555199969989&text=Oi%2C%20vim%20pelo%20site%20VivaPOA%20e%20quero%20fazer%20um%20pedido." target="_blank" loading="lazy">
 				<img src="../assets/midia/logo-whatsapp-botao.webp" alt="Botão do WhatsApp">
-				PEDIR AGORA
+				Solicitar Cardápio
 			</a>
 		</div>
 
@@ -159,16 +170,6 @@
 				<p>⭐⭐⭐⭐⭐</p>
 				
 			  </section>
-			</div>
-			<div id="botaoNav" style="margin-left: 30%;">
-				<button onclick="location.href='#endereco'" 	>
-					Ver mais Informações
-				</button>
-				
-				<button onclick="copiarChavePix()">
-					Doar ao Projeto
-				</button>
-			
 			</div>
 			
 
@@ -244,7 +245,7 @@
 		
 
 		<!-- SIMULA CHAT E SMARTPHONE -->
-		  <h3 style="color: var(--cor-escura);" class="chamadaSub animar" data-delay="0.3s">
+		  <h3 id="projeto-viva-poa-divulgacao-gratuita" style="color: var(--cor-escura);" class="chamadaSub animar" data-delay="0.3s">
 			  Patrocinador: Projeto sem fins lucrativos Viva POA.
 			</h3>
 		  
@@ -272,7 +273,13 @@
 					<p>Este projeto surge como uma alternativa para reduzir essas cobranças abusivas, causadas pelo monopólio dos grandes apps.</p>
 				<p>Dan Schaidt</p>
 			  </section>
-		  
+			  
+			  <div id="botaoDoa">
+				<button onclick="copiarChavePix()">
+					Doar ao Projeto
+				</button>
+			</div>
+
 			  <img class="animar" data-delay="0.7s" src="../assets/midia/dan-schaidt-fundador-viva-poa.webp" alt="Dan Schaidt fundador do projeto Viva POA">
 			</div>
 			
