@@ -5,12 +5,6 @@
 	--cor-vermelho: #E74C3C; /*vermelho*/ 
 	--cor-cinza: #5A5A58; /*cinza*/
 	--cor-escura: #1E1E1C; /* escuro*/
-	
-	--cor-clara: #F5F5F5;
-	--cor-azul: #4FADE1; /* azul */ 
-	--cor-vermelho: #E74C3C; /*vermelho*/ 
-	--cor-cinza: #5A5A58; /*cinza*/
-	--cor-escura: #1E1E1C; /* escuro*/
 
 }
 /* Chrome, Edge, Safari BARRA DE NAVEGAÇÃO PERSONALIZADA*/
@@ -904,7 +898,32 @@ a {
 
 
 
-	
+.status-aberto {
+  background-color: var(--cor-vermelho);
+  padding: 5px;
+  border-radius: 20px;
+  color: var(--cor-clara);
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.status-fechado {
+  background-color: var(--cor-escura);
+  padding: 5px;
+  border-radius: 20px;
+  color: var(--cor-clara);
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.status-indisponivel { 
+  background-color: var(--cor-clara);
+  padding: 5px;
+  border-radius: 20px;
+  color: var(--cor-vermelho);
+  font-weight: bold;
+  margin-left: 10px;
+}	
 
 
 

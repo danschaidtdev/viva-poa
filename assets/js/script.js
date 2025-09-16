@@ -88,3 +88,64 @@ function copiarChavePix() {
     }
   });
 
+// STATUS DE OPERAÇÃO
+
+window.addEventListener("DOMContentLoaded", () => {
+    mostrarStatusAtual();
+});
+
+function mostrarStatusAtual() {
+    const statusEl = document.getElementById("status-abertura");
+    if (!statusEl) return;
+
+    const agora = new Date();
+    const diaSemana = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ][agora.getDay()];
+    const horaMinuto = `${String(agora.getHours()).padStart(2,"0")}:${String(agora.getMinutes()).padStart(2,"0")}`;
+
+    const jsonLdEl = document.querySelector("script[type='application/ld+json']");
+    let status = "Indisponível";
+
+    if (jsonLdEl) {
+        try {
+            const dados = JSON.parse(jsonLdEl.textContent);
+
+            if (dados.openingHoursSpecification) {
+                const abertoAgora = dados.openingHoursSpecification.some((oh) => {
+                    const dias = Array.isArray(oh.dayOfWeek) ? oh.dayOfWeek : [oh.dayOfWeek];
+                    if (!dias.includes(diaSemana)) return false;
+
+                    let fecha = oh.closes;
+                    let horaAtual = horaMinuto;
+
+                    // Ajuste para horários que passam da meia-noite
+                    if (fecha < oh.opens) {
+                        if (horaAtual < oh.opens) {
+                            horaAtual = ("24:" + horaAtual).slice(-5);
+                        }
+                        fecha = ("24:" + fecha).slice(-5);
+                    }
+
+                    return horaAtual >= oh.opens && horaAtual <= fecha;
+                });
+
+                status = abertoAgora ? "Aberto agora" : "Fechado";
+            }
+        } catch (e) {
+            console.warn("Erro ao ler JSON-LD:", e);
+        }
+    }
+
+    // Atualiza elemento com a classe de status
+    statusEl.textContent = status;
+    statusEl.className = status === "Aberto agora" ? "status-aberto" :
+                         status === "Fechado" ? "status-fechado" :
+                         "status-indisponivel";
+}
