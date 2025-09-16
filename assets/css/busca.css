@@ -120,7 +120,8 @@
 
 .status-aberto {
   background-color: var(--cor-vermelho);
-  padding: 3px;
+  padding: 5px;
+  border-radius: 20px;
   color: var(--cor-clara);
   font-weight: bold;
   margin-left: 10px;
@@ -128,14 +129,18 @@
 
 .status-fechado {
   background-color: var(--cor-escura);
-  padding: 3px;
+  padding: 5px;
+  border-radius: 20px;
   color: var(--cor-clara);
   font-weight: bold;
   margin-left: 10px;
 }
 
-.status-indisponivel {
-  color: var(--cor-cinza);
+.status-indisponivel { 
+  background-color: var(--cor-clara);
+  padding: 5px;
+  border-radius: 20px;
+  color: var(--cor-vermelho);
   font-weight: bold;
   margin-left: 10px;
 }
