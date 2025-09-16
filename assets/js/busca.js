@@ -20,13 +20,19 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   if (btnSomenteAbertos) {
-    btnSomenteAbertos.addEventListener("click", () => {
-      // Alterna estado do botão
-      btnSomenteAbertos.dataset.active = btnSomenteAbertos.dataset.active === "true" ? "false" : "true";
-      const termo = campoBusca?.value.toLowerCase() || '';
-      buscarMetaTags(termo, btnSomenteAbertos.dataset.active === "true");
-    });
-  }
+  btnSomenteAbertos.addEventListener("click", () => {
+    // Alterna estado do botão
+    const ativo = btnSomenteAbertos.dataset.active === "true";
+    btnSomenteAbertos.dataset.active = ativo ? "false" : "true";
+
+    // Alterna classe para mudança de cor
+    btnSomenteAbertos.classList.toggle("ativo", !ativo);
+
+    const termo = campoBusca?.value.toLowerCase() || '';
+    buscarMetaTags(termo, !ativo);
+  });
+}
+
 });
 
 function buscarPorCategoria(categoria) {
