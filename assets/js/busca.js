@@ -10,34 +10,36 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const botaoBusca = document.getElementById("botao-busca");
   const campoBusca = document.getElementById("busca");
-  const filtroAbertos = document.getElementById("filtro-abertos");
+  const btnSomenteAbertos = document.getElementById("somente-abertos");
 
   if (botaoBusca && campoBusca) {
     botaoBusca.addEventListener("click", () => {
       const termo = campoBusca.value.toLowerCase();
-      buscarMetaTags(termo, filtroAbertos?.checked);
+      buscarMetaTags(termo, btnSomenteAbertos?.dataset.active === "true");
     });
   }
 
-  if (filtroAbertos) {
-    filtroAbertos.addEventListener("change", () => {
+  if (btnSomenteAbertos) {
+    btnSomenteAbertos.addEventListener("click", () => {
+      // Alterna estado do botão
+      btnSomenteAbertos.dataset.active = btnSomenteAbertos.dataset.active === "true" ? "false" : "true";
       const termo = campoBusca?.value.toLowerCase() || '';
-      buscarMetaTags(termo, filtroAbertos.checked);
+      buscarMetaTags(termo, btnSomenteAbertos.dataset.active === "true");
     });
   }
 });
 
 function buscarPorCategoria(categoria) {
-  const filtroAbertos = document.getElementById("filtro-abertos");
-  buscarMetaTags(categoria.toLowerCase(), filtroAbertos?.checked);
+  const btnSomenteAbertos = document.getElementById("somente-abertos");
+  buscarMetaTags(categoria.toLowerCase(), btnSomenteAbertos?.dataset.active === "true");
 }
 
 function mostrarAleatorios() {
   const aleatorios = arquivosEstabelecimentos
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
-  const filtroAbertos = document.getElementById("filtro-abertos");
-  buscarMetaTags('', filtroAbertos?.checked, aleatorios);
+  const btnSomenteAbertos = document.getElementById("somente-abertos");
+  buscarMetaTags('', btnSomenteAbertos?.dataset.active === "true", aleatorios);
 }
 
 async function buscarMetaTags(filtro, apenasAbertos = false, listaEspecifica = null) {
