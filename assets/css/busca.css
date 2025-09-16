@@ -36,7 +36,7 @@
 
   .botoes-categorias button {
     background-color: var(--cor-vermelho);
-    color: white;
+    color: var(--cor-clara);
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -119,26 +119,30 @@
 }
 
 .status-aberto {
-  color: green;
+  background-color: var(--cor-vermelho);
+  padding: 3px;
+  color: var(--cor-clara);
   font-weight: bold;
   margin-left: 10px;
 }
 
 .status-fechado {
-  color: red;
+  background-color: var(--cor-escura);
+  padding: 3px;
+  color: var(--cor-clara);
   font-weight: bold;
   margin-left: 10px;
 }
 
 .status-indisponivel {
-  color: gray;
+  color: var(--cor-cinza);
   font-weight: bold;
   margin-left: 10px;
 }
 
 #somente-abertos {
-  background-color: var(--cor-ciano);
-  color: var(--cor-escura);
+  background-color: var(--cor-cinza);
+  color: var(--cor-clara);
   border: none;
   padding: 8px 12px;
   margin-left: 5px;
@@ -147,6 +151,6 @@
 }
 
 #somente-abertos.ativo {
-  background-color: var(--cor-vermelha);
-  color: white;
+  background-color: var(--cor-vermelho);
+  color: var(--cor-clara);
 }
