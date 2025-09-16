@@ -79,19 +79,13 @@ async function buscarMetaTags(filtro, apenasAbertos = false, listaEspecifica = n
 
       // Analisa JSON-LD
       const jsonLd = doc.querySelector("script[type='application/ld+json']")?.textContent;
-      let abertoAgora = true;
-      let horarios = "Horário não disponível";
+      let status = "Indisponível"; // padrão
 
       if (jsonLd) {
         try {
           const dados = JSON.parse(jsonLd);
           if (dados.openingHoursSpecification) {
-            horarios = dados.openingHoursSpecification.map(oh => {
-              const dias = Array.isArray(oh.dayOfWeek) ? oh.dayOfWeek.join(", ") : oh.dayOfWeek;
-              return `${dias}: ${oh.opens} - ${oh.closes}`;
-            }).join(" | ");
-
-            abertoAgora = dados.openingHoursSpecification.some((oh) => {
+            const abertoAgora = dados.openingHoursSpecification.some((oh) => {
               const dias = Array.isArray(oh.dayOfWeek) ? oh.dayOfWeek : [oh.dayOfWeek];
               if (!dias.includes(diaSemana)) return false;
 
@@ -108,20 +102,21 @@ async function buscarMetaTags(filtro, apenasAbertos = false, listaEspecifica = n
 
               return horaAtual >= oh.opens && horaAtual <= fecha;
             });
+
+            status = abertoAgora ? "Aberto agora" : "Fechado";
           }
         } catch (e) {
           console.warn("Erro ao parsear JSON-LD:", e);
         }
       }
 
-      if ((conteudo.includes(filtro) || filtro === '') && (!apenasAbertos || abertoAgora)) {
+      if ((conteudo.includes(filtro) || filtro === '') && (!apenasAbertos || status === "Aberto agora")) {
         resultados.push({
           titulo: title,
           descricao: desc,
           imagem: imagem,
           link: pastaEstabelecimentos + arquivo,
-          aberto: abertoAgora,
-          horarios: horarios
+          status: status
         });
       }
     } catch (e) {
@@ -150,15 +145,14 @@ function mostrarResultados(resultados) {
     const card = document.createElement("div");
     card.classList.add("card-resultado");
 
-    const status = r.aberto
-      ? `<span class="status-aberto">Aberto agora</span>`
-      : `<span class="status-fechado">Fechado</span>`;
+    const statusClass = r.status === "Aberto agora" ? "status-aberto" :
+                        r.status === "Fechado" ? "status-fechado" :
+                        "status-indisponivel";
 
     card.innerHTML = `
       <img src="${r.imagem}" alt="${r.titulo}" class="imagem-resultado" />
-      <h2>${r.titulo} ${status}</h2>
+      <h2>${r.titulo} <span class="${statusClass}">${r.status}</span></h2>
       <p>${r.descricao}</p>
-      <p class="horarios">${r.horarios}</p>
       <a href="${r.link}" target="_blank">Ver mais</a>
     `;
 

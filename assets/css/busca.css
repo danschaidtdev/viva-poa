@@ -118,7 +118,6 @@
     border-radius: 10px;
 }
 
-
 .status-aberto {
   color: green;
   font-weight: bold;
@@ -131,8 +130,8 @@
   margin-left: 10px;
 }
 
-.horarios {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 5px;
+.status-indisponivel {
+  color: gray;
+  font-weight: bold;
+  margin-left: 10px;
 }
