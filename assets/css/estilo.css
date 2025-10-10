@@ -898,6 +898,42 @@ a {
 
 
 
+.status-aberto {
+  background-color: var(--cor-clara);
+  padding: 8px;
+  border-radius: 20px;
+  color: var(--cor-vermelho);
+  box-shadow: 0 0 8px var(--cor-clara);
+  font-weight: bold;
+  font-size: 18px;
+ 
+  
+}
+
+.status-fechado {
+  background-color: var(--cor-cinza);
+  padding: 8px;
+  border-radius: 20px;
+  color: var(--cor-escura);
+  box-shadow: 0 0 8px var(--cor-escura);
+  font-weight: bold;
+  font-size: 18px;
+ 
+ 
+
+.status-indisponivel { 
+  background-color: var(--cor-escura);
+  padding: 5px;
+  border-radius: 20px;
+  color: var(--cor-clara);
+  box-shadow: 0 0 8px var(--cor-vermelho);
+  font-weight: bold;
+ 
+
+}	
+
+
+
 
 
 /***************************************/
