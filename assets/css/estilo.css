@@ -898,36 +898,6 @@ a {
 
 
 
-.status-aberto {
-  background-color: var(--cor-clara);
-  padding: 15px;
-  border-radius: 8px;
-  color: var(--cor-escura);
-  box-shadow: inset var(--cor-cinza);
-  font-weight: bold;
-  margin-left: 10px;
-}
-
-.status-fechado {
-  background-color: var(--cor-escura);
-  padding: 15px;
-  border-radius: 8px;
-  color: var(--cor-clara);
-  font-weight: bold;
-  margin-left: 10px;
-}
-
-.status-indisponivel { 
-  background-color: var(--cor-clara);
-  padding: 15px;
-  border-radius: 8px;
-  color: var(--cor-vermelho);
-  font-weight: bold;
-  margin-left: 10px;
-}	
-
-
-
 
 
 /***************************************/
