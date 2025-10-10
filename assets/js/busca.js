@@ -118,9 +118,9 @@ function mostrarResultados(resultados) {
     card.classList.add("card-resultado");
 
     const statusClass =
-      r.status === "Aberto"
+      r.status === "Aberto agora"
         ? "status-aberto"
-        : r.status === "Fechado"
+        : r.status === "Fechado agora"
         ? "status-fechado"
         : "status-indisponivel";
 
