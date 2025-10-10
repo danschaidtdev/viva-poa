@@ -915,7 +915,6 @@ a {
   padding: 8px;
   border-radius: 20px;
   color: var(--cor-escura);
-  box-shadow: 0 0 8px var(--cor-escura);
   font-weight: bold;
   font-size: 18px;
  
