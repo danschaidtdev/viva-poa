@@ -20,60 +20,51 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   if (btnSomenteAbertos) {
-  btnSomenteAbertos.addEventListener("click", () => {
-    // Alterna estado do botão
-    const ativo = btnSomenteAbertos.dataset.active === "true";
-    btnSomenteAbertos.dataset.active = ativo ? "false" : "true";
+    btnSomenteAbertos.addEventListener("click", () => {
+      const ativo = btnSomenteAbertos.dataset.active === "true";
+      btnSomenteAbertos.dataset.active = ativo ? "false" : "true";
+      btnSomenteAbertos.classList.toggle("ativo", !ativo);
 
-    // Alterna classe para mudança de cor
-    btnSomenteAbertos.classList.toggle("ativo", !ativo);
-
-    const termo = campoBusca?.value.toLowerCase() || '';
-    buscarMetaTags(termo, !ativo);
-  });
-}
-
+      const termo = campoBusca?.value.toLowerCase() || "";
+      buscarMetaTags(termo, !ativo);
+    });
+  }
 });
 
+// ------------------------
+// BUSCA POR CATEGORIA
+// ------------------------
 function buscarPorCategoria(categoria) {
   const btnSomenteAbertos = document.getElementById("somente-abertos");
   buscarMetaTags(categoria.toLowerCase(), btnSomenteAbertos?.dataset.active === "true");
 }
 
+// ------------------------
+// MOSTRAR ALEATÓRIOS
+// ------------------------
 function mostrarAleatorios() {
   const aleatorios = arquivosEstabelecimentos
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
   const btnSomenteAbertos = document.getElementById("somente-abertos");
-  buscarMetaTags('', btnSomenteAbertos?.dataset.active === "true", aleatorios);
+  buscarMetaTags("", btnSomenteAbertos?.dataset.active === "true", aleatorios);
 }
 
+// ------------------------
+// FUNÇÃO DE BUSCA PRINCIPAL
+// ------------------------
 async function buscarMetaTags(filtro, apenasAbertos = false, listaEspecifica = null) {
   const container = document.getElementById("resultados");
   if (!container) return;
 
   container.innerHTML = "<p>Buscando...</p>";
-
   const lista = listaEspecifica || arquivosEstabelecimentos;
   const resultados = [];
-
-  const agora = new Date();
-  const diaSemana = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ][agora.getDay()];
-  const horaMinuto = `${String(agora.getHours()).padStart(2, "0")}:${String(agora.getMinutes()).padStart(2, "0")}`;
 
   for (const arquivo of lista) {
     try {
       const resposta = await fetch(pastaEstabelecimentos + arquivo);
       const texto = await resposta.text();
-
       const parser = new DOMParser();
       const doc = parser.parseFromString(texto, "text/html");
 
@@ -85,46 +76,16 @@ async function buscarMetaTags(filtro, apenasAbertos = false, listaEspecifica = n
 
       const conteudo = `${title} ${desc}`.toLowerCase();
 
-      // Analisa JSON-LD
       const jsonLd = doc.querySelector("script[type='application/ld+json']")?.textContent;
-      let status = "Indisponível"; // padrão
+      const status = calcularStatus(jsonLd);
 
-      if (jsonLd) {
-        try {
-          const dados = JSON.parse(jsonLd);
-          if (dados.openingHoursSpecification) {
-            const abertoAgora = dados.openingHoursSpecification.some((oh) => {
-              const dias = Array.isArray(oh.dayOfWeek) ? oh.dayOfWeek : [oh.dayOfWeek];
-              if (!dias.includes(diaSemana)) return false;
-
-              let fecha = oh.closes;
-              let horaAtual = horaMinuto;
-
-              // Ajuste para horários que passam da meia-noite
-              if (fecha < oh.opens) {
-                if (horaAtual < oh.opens) {
-                  horaAtual = ("24:" + horaAtual).slice(-5);
-                }
-                fecha = ("24:" + fecha).slice(-5);
-              }
-
-              return horaAtual >= oh.opens && horaAtual <= fecha;
-            });
-
-            status = abertoAgora ? "Aberto agora" : "Fechado";
-          }
-        } catch (e) {
-          console.warn("Erro ao parsear JSON-LD:", e);
-        }
-      }
-
-      if ((conteudo.includes(filtro) || filtro === '') && (!apenasAbertos || status === "Aberto agora")) {
+      if ((conteudo.includes(filtro) || filtro === "") && (!apenasAbertos || status === "Aberto agora")) {
         resultados.push({
           titulo: title,
           descricao: desc,
-          imagem: imagem,
+          imagem,
           link: pastaEstabelecimentos + arquivo,
-          status: status
+          status,
         });
       }
     } catch (e) {
@@ -135,6 +96,9 @@ async function buscarMetaTags(filtro, apenasAbertos = false, listaEspecifica = n
   mostrarResultados(resultados);
 }
 
+// ------------------------
+// MOSTRAR RESULTADOS
+// ------------------------
 function mostrarResultados(resultados) {
   const container = document.getElementById("resultados");
   if (!container) return;
@@ -153,9 +117,12 @@ function mostrarResultados(resultados) {
     const card = document.createElement("div");
     card.classList.add("card-resultado");
 
-    const statusClass = r.status === "Aberto agora" ? "status-aberto" :
-                        r.status === "Fechado" ? "status-fechado" :
-                        "status-indisponivel";
+    const statusClass =
+      r.status === "Aberto agora"
+        ? "status-aberto"
+        : r.status === "Fechado agora"
+        ? "status-fechado"
+        : "status-indisponivel";
 
     card.innerHTML = `
       <img src="${r.imagem}" alt="${r.titulo}" class="imagem-resultado" />
@@ -166,4 +133,49 @@ function mostrarResultados(resultados) {
 
     container.appendChild(card);
   });
+}
+
+// ------------------------
+// FUNÇÃO DE CÁLCULO DE STATUS
+// ------------------------
+function calcularStatus(jsonLdText) {
+  if (!jsonLdText) return "Indisponível";
+
+  try {
+    const dados = JSON.parse(jsonLdText);
+    const horarios = Array.isArray(dados.openingHoursSpecification)
+      ? dados.openingHoursSpecification
+      : [dados.openingHoursSpecification];
+
+    const agora = new Date();
+    const diaSemana = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ][agora.getDay()];
+    const horaAtual = agora.getHours() + agora.getMinutes() / 60;
+
+    const abertoAgora = horarios.some((oh) => {
+      const dias = Array.isArray(oh.dayOfWeek) ? oh.dayOfWeek : [oh.dayOfWeek];
+      if (!dias.includes(diaSemana)) return false;
+
+      const [hA, mA] = oh.opens.split(":").map(Number);
+      const [hF, mF] = oh.closes.split(":").map(Number);
+      const abre = hA + mA / 60;
+      const fecha = hF + mF / 60;
+
+      // Horários que passam da meia-noite
+      if (fecha < abre) return horaAtual >= abre || horaAtual < fecha;
+      return horaAtual >= abre && horaAtual < fecha;
+    });
+
+    return abertoAgora ? "Aberto agora" : "Fechado agora";
+  } catch (e) {
+    console.warn("Erro ao interpretar JSON-LD:", e);
+    return "Indisponível";
+  }
 }

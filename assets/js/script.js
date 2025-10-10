@@ -98,7 +98,10 @@ function mostrarStatusAtual() {
     const statusEl = document.getElementById("status-abertura");
     if (!statusEl) return;
 
-    const agora = new Date();
+    // Obtém data e hora ajustada para o Brasil (GMT-3)
+    const agoraUTC = new Date();
+    const agora = new Date(agoraUTC.getTime() - (3 * 60 * 60 * 1000)); // ajusta -3h
+
     const diaSemana = [
         "Sunday",
         "Monday",
@@ -108,7 +111,8 @@ function mostrarStatusAtual() {
         "Friday",
         "Saturday",
     ][agora.getDay()];
-    const horaMinuto = `${String(agora.getHours()).padStart(2,"0")}:${String(agora.getMinutes()).padStart(2,"0")}`;
+
+    const horaAtual = agora.getHours() + agora.getMinutes() / 60; // ex: 13.5 = 13h30
 
     const jsonLdEl = document.querySelector("script[type='application/ld+json']");
     let status = "Indisponível";
@@ -122,18 +126,17 @@ function mostrarStatusAtual() {
                     const dias = Array.isArray(oh.dayOfWeek) ? oh.dayOfWeek : [oh.dayOfWeek];
                     if (!dias.includes(diaSemana)) return false;
 
-                    let fecha = oh.closes;
-                    let horaAtual = horaMinuto;
+                    const [hA, mA] = oh.opens.split(":").map(Number);
+                    const [hF, mF] = oh.closes.split(":").map(Number);
+                    const abre = hA + mA / 60;
+                    const fecha = hF + mF / 60;
 
-                    // Ajuste para horários que passam da meia-noite
-                    if (fecha < oh.opens) {
-                        if (horaAtual < oh.opens) {
-                            horaAtual = ("24:" + horaAtual).slice(-5);
-                        }
-                        fecha = ("24:" + fecha).slice(-5);
+                    // Se o horário cruza a meia-noite
+                    if (fecha < abre) {
+                        return horaAtual >= abre || horaAtual < fecha;
                     }
 
-                    return horaAtual >= oh.opens && horaAtual <= fecha;
+                    return horaAtual >= abre && horaAtual < fecha;
                 });
 
                 status = abertoAgora ? "Aberto agora" : "Fechado";
@@ -143,9 +146,12 @@ function mostrarStatusAtual() {
         }
     }
 
-    // Atualiza elemento com a classe de status
+    // Atualiza o elemento com o texto e classe correspondente
     statusEl.textContent = status;
-    statusEl.className = status === "Aberto agora" ? "status-aberto" :
-                         status === "Fechado" ? "status-fechado" :
-                         "status-indisponivel";
+    statusEl.className =
+        status === "Aberto agora"
+            ? "status-aberto"
+            : status === "Fechado"
+            ? "status-fechado"
+            : "status-indisponivel";
 }
