@@ -126,7 +126,8 @@ function mostrarResultados(resultados) {
 
     card.innerHTML = `
       <img src="${r.imagem}" alt="${r.titulo}" class="imagem-resultado" />
-      <h2>${r.titulo} <span class="${statusClass}">${r.status}</span></h2>
+      <h2>${r.titulo}</h2>
+      <span class="${statusClass}">${r.status}</span>
       <p>${r.descricao}</p>
       <a href="${r.link}" target="_blank">Ver mais</a>
     `;
