@@ -32,7 +32,7 @@
 		<div class="navegador">
   			<nav id="botaoNav">
 				<button onclick="copiarChavePix()">
-				Doar ao Projeto
+				Chave PIX
 				</button>
 				<div id="popupPixCopiado">Chave Pix copiada!</div>
 
@@ -40,7 +40,7 @@
 				target="_blank" 
 				rel="noopener noreferrer" 
 				class="botaoEstilizado">
-				Cadastrar um Local
+				Fazer Cadastro
 				</a>
 			</nav>
 		</div>
@@ -50,7 +50,22 @@
 				<img src="https://www.rbsdirect.com.br/filestore/1/0/0/4/3_f77a3fdd400a3d4/34001_37676e054c01388.jpg" alt="Imagem de comércios locais em porto alegre" fetchpriority="high" loading="eager">
 				<div class="mensagem">
 				
-					<h1>Descubra <strong>Porto Alegre</strong> através de quem é daqui.</h1>
+					<h1>Reomendação de Bar,farmácia, restaurante, xis, tabacaria, mercado e muito mais em Porto Alegre </h1>
+
+					<div id="busca-container">
+    <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
+    <button id="botao-busca" class="estiloBotao">Buscar</button>
+    <div class="botoes-categorias">
+      <button onclick="buscarPorCategoria('pizza')">Pizza</button>
+      <button onclick="buscarPorCategoria('lanches')">Lanche</button>
+      <button onclick="buscarPorCategoria('mercado')">Mercado</button>
+      <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
+      <button onclick="mostrarAleatorios()">ME SURPREENDA!</button>
+      <button id="somente-abertos" data-active="false">SÓ ABERTOS</button>
+    </div>
+</div>
+
+  <div id="resultados"></div><br>
 
 				</div>
 			</div>
@@ -84,23 +99,10 @@
 <div class="margemLateral"> <!-- DIV DO BODY-->
 
   <!--ABA DE BUSCA E RESULTADOS-->
-  <h1 class="blocoTitulos animar" data-delay="0.2s" >Descubra o que fazer em porto alegre e apoie o comércio local.</h1>
+  <h2 class="blocoTitulos animar" data-delay="0.2s" >Descubra o que fazer em porto alegre e apoie o comércio local.</h1>
 
 <body>
-  <div id="busca-container">
-    <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
-    <button id="botao-busca" class="estiloBotao">Buscar</button>
-    <div class="botoes-categorias">
-      <button onclick="buscarPorCategoria('pizza')">Pizza</button>
-      <button onclick="buscarPorCategoria('lanches')">Lanche</button>
-      <button onclick="buscarPorCategoria('mercado')">Mercado</button>
-      <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
-      <button onclick="mostrarAleatorios()">ME SURPREENDA!</button>
-      <button id="somente-abertos" data-active="false">SÓ ABERTOS</button>
-    </div>
-</div>
-
-  <div id="resultados"></div><br>
+  
 
 
 
@@ -119,7 +121,7 @@
 			
 		<!--TEXTO INICIAL COM SEO-->
 		<section class="blocoTitulos animar" data-delay="0.2s" >
-			<h1> <strong>A vitrine regional</strong> feita por quem é daqui para quem ama POA.</h1>
+			<h3> <strong>A vitrine regional</strong> feita por quem é daqui para quem ama POA.</h3>
 		</section>
 
 		
@@ -128,9 +130,9 @@
 		<!--  LANDING PAGE INICIAL-->	
 
 		<div>
-			<h2 class="chamadaSub animar" data-delay="0.3s">
+			<h4 class="chamadaSub animar" data-delay="0.3s">
 			  Recomendação de comércios locais bem avaliados no Google.
-			</h2>
+			</h4>
 		  
 
 		<!--  BENEFICIOS  -->
@@ -143,9 +145,9 @@
 
 
 			
-			<h3 class="chamadaSub animar" data-delay="0.3s">
+			<h5 class="chamadaSub animar" data-delay="0.3s">
 			 Divulgação e presença digital gratuita para negócios locais.
-			</h3>
+			</h5>
 			<p>Doe e receba funcionalidades extras em sua página.</p>
 			<!--IMAGENS DO RESTAURANTE-->
 			<div class="galeria-wrapper">
@@ -164,9 +166,9 @@
 			
 			
 		  <!-- SIMULA CHAT E SMARTPHONE -->
-		  <h3 class="chamadaSub animar" data-delay="0.3s">
+		  <h6 class="chamadaSub animar" data-delay="0.3s">
 			  Motivação e expectativa para o projeto Viva POA.
-			</h3>
+			</h6>
 		  
 		  
 		<div class="imagemFeed" >
@@ -184,14 +186,14 @@
 			  </section>
 		  
 			  <section id="fundo" class="animar" data-delay="0.7s">
-				<h4><strong>Doe para ajudar o projeto</strong></h4>
+				<h7><strong>Doe para ajudar o projeto</strong></h7>
 				A intenção é trazer novas funções para os clientes e donos de estabelecimentos, como pagamentos pelo site e muito mais.<br>
 				A sua doação me ajuda continuar e buscar novos parceiros.<br>
 				<p>Dan Schaidt</p>
 			  </section>
 			  
 			  <section id="fundo" class="animar" data-delay="0.7s">
-				<h4><strong>Com foco no marketing e empreendedorismo com responsabilidade social</strong></h4>
+				<h8><strong>Com foco no marketing e empreendedorismo com responsabilidade social</strong></h8>
 				No Brasil existem 6,4 milhões de estabelecimentos. Desse total, 99% são micro e pequenas empresas (MPE). As MPEs respondem por 52% dos empregos com carteira assinada no setor privado (16,1 milhões).
         <a href="https://sebrae.com.br/sites/PortalSebrae/ufs/sp/sebraeaz/pequenos-negocios-em-numeros,12e8794363447510VgnVCM1000004c00210aRCRD#:~:text=No%20Brasil%20existem%206%2C4,(16%2C1%20milh%C3%B5es)." target="_blank">Fonte: SEBRAE</a>
 				<p>Dan Schaidt</p>
@@ -204,7 +206,8 @@
 			
 			
 		  <!-- PERGUNTAS FREQUENTES EMPRESA-->
-		<h3 id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Empreendedor (FAQ)</h3>
+		<h9 id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Empreendedor (FAQ)</h9
+			>
 
 	
 		<!--MENSALIDADE-->
@@ -306,7 +309,7 @@
 
 
 		 <!-- PERGUNTAS FREQUENTES CLIENTE-->
-		 <h3 id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Cliente(FAQ)</h3>
+		 <p id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Cliente(FAQ)</p>
 
 				<!--PEDIDO-->
 
