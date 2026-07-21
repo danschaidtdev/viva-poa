@@ -2,12 +2,7 @@
 <html lang="pt-BR"> 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- TAGS DE WEB APP -->
-    <meta name="theme-color" content="#E74C3C">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 	<link rel="icon" href="../viva-poa/assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" type="image/webp">
 	
@@ -19,256 +14,376 @@
 	<meta property="og:title" content="Viva POA - Recomendações em Porto Alegre">
 	<meta name="description" content="Onde ir em Porto Alegre. Sugestão de bares, restaurantes e o melhor de Porto Alegre">
 
+  
+
 	<link rel="stylesheet" href="/viva-poa/assets/css/estilo.css">
 	<link rel="stylesheet" href="/viva-poa/assets/css/busca.css">
 	<link rel="stylesheet" href="/viva-poa/assets/css/produtos.css">
   	<link rel="stylesheet" href="/viva-poa/assets/css/pedidos.css">
+  
+	
 </head>
-<body class="app-layout">
+<body>
+<div>
 
-	<!-- APP BAR SUPERIOR / BUSCA FIXA -->
-	<header class="app-header">
-        <h2 class="app-title">Viva POA</h2>
-        <div id="busca-container">
-            <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
-            
-            <div class="botoes-categorias app-filtros-horizontal">
-                <button onclick="buscarPorCategoria('pizza')">Pizza</button>
-                <button onclick="buscarPorCategoria('lanches')">Lanche</button>
-                <button onclick="buscarPorCategoria('mercado')">Mercado</button>
-                <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
-                <button id="somente-abertos" data-active="false">SÓ ABERTOS</button>
-                <button onclick="mostrarAleatorios()">ME SURPREENDA!</button>
-            </div>
-        </div>
-    </header>
+	<!-- ************* CABEÇALHO ************* -->
 
+	<div >
+		<div class="navegador">
+  			<nav id="botaoNav">
+				<button onclick="copiarChavePix()">
+				Chave PIX
+				</button>
+				<div id="popupPixCopiado">Chave Pix copiada!</div>
+
+				<a id="botaoForm" href="https://forms.gle/3d3bzMq18DrG6N9W8" 
+				target="_blank" 
+				rel="noopener noreferrer" 
+				class="botaoEstilizado">
+				Fazer Cadastro
+				</a>
+			</nav>
+		</div>
+		<header id="servicos">
+
+			
+	
+		</header>
+	</div>	
+	
 	<!-- POP UP INICIAL-->
-	<div id="popupInicio" class="blocoPopup">
+	<div id="popupInicio" class="blocoPopup"> <!--ID DO POPUP.JS-->
 		<img src="../viva-poa/assets/midia/popup-viva-poa-feira.webp" alt="Principais doadores do projeto são divulgados neste espaço">
+		
+		<!-- BOTÃO AQUI -->
 		<span class="botaoPopup" role="button" aria-label="Fechar popup" tabindex="0">Fechar</span>
+		
 		<div class="textoPopup">
-			<h3 class="chamadaSub">Livre-se das TAXAS<br> compre e venda pela Viva POA.</h3>
+			<h3 class="chamadaSub">Livre-se das TAXAS<br> compre e venda pela Viva POA.
+			</h3>
+			<!--<button  class=" abrirPopupBtn" title="Orçamento Online" alt="Faça um Orçamento Online de Freelance">
+				Orçamento facilitado com automação</button>-->
+			
 		</div>
 	</div>
+	
+	
 
-	<!-- ************ CORPO PRINCIPAL ROLÁVEL ************-->
-	<main class="app-conteudo">
 
-		<h2 class="blocoTitulos animar" data-delay="0.2s">Melhores locais de Porto Alegre</h2>
+	</div>
 
-		<!-- LOCAL ONDE OS RESULTADOS DA BUSCA APARECEM -->
-		<div id="resultados"></div><br>
+	<!-- ************ CORPO ************-->
 
-		<!-- TAGS -->
-		<section class="tag"> 
-			<span class="blocoTag">pizzaria</span>
-			<span class="blocoTag">churrascaria</span>
-			<span class="blocoTag">sorveteria</span>
-			<span class="blocoTag">cafeteria</span>
-			<span class="blocoTag">lancheria</span>
-			<span class="blocoTag">bazar</span>
-			<span class="blocoTag">farmacia</span>
-			<span class="blocoTag">restaurante de porto alegre</span>
-			<span class="blocoTag">comida caseira</span>
-		</section>
+<div class="margemLateral"> <!-- DIV DO BODY-->
+
+  <!--ABA DE BUSCA E RESULTADOS-->
+  <h2 class="blocoTitulos animar" data-delay="0.2s" >Melhores locais de Porto Alegre</h1>
+
+	<div id="busca-container">
+    <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
+    <button id="botao-busca" class="estiloBotao">Buscar</button>
+    <div class="botoes-categorias">
+      <button onclick="buscarPorCategoria('pizza')">Pizza</button>
+      <button onclick="buscarPorCategoria('lanches')">Lanche</button>
+      <button onclick="buscarPorCategoria('mercado')">Mercado</button>
+      <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
+      <button onclick="mostrarAleatorios()">ME SURPREENDA!</button>
+      <button id="somente-abertos" data-active="false">SÓ ABERTOS</button>
+    </div>
+</div>
+
+  <div id="resultados"></div><br>
+
+<body>
+  
+
+
+
+			<!--        TAGS        -->
+			<section class="tag"> 
+				<span class="blocoTag">pizzaria</span>
+				<span class="blocoTag">churrascaria</span>
+				<span class="blocoTag">sorveteria</span>
+				<span class="blocoTag">cafeteria</span>
+				<span class="blocoTag">lancheria</span>
+				<span class="blocoTag">bazar</span>
+				<span class="blocoTag">farmacia</span>
+				<span class="blocoTag"> restaurante de porto alegre</strong></span>
+				<span class="blocoTag">comida caseira</span>
+			</section>
 			
 		<!--TEXTO INICIAL COM SEO-->
-		<div class="banner">
-			<img src="https://www.rbsdirect.com.br/filestore/1/0/0/4/3_f77a3fdd400a3d4/34001_37676e054c01388.jpg" alt="Imagem de comércios locais em porto alegre" fetchpriority="high" loading="eager">
-			<div class="mensagem">
-				<h3>Recomendação de bar,farmácia, restaurante, xis, tabacaria, mercado e muito mais em Porto Alegre </h3>
-			</div>
-		</div>
 
+		<div class="banner">
+				<img src="https://www.rbsdirect.com.br/filestore/1/0/0/4/3_f77a3fdd400a3d4/34001_37676e054c01388.jpg" alt="Imagem de comércios locais em porto alegre" fetchpriority="high" loading="eager">
+				<div class="mensagem">
+				
+					<h3>Recomendação de bar,farmácia, restaurante, xis, tabacaria, mercado e muito mais em Porto Alegre </h3>
+
+					
+
+				</div>
+			</div>
 		<section class="blocoTitulos animar" data-delay="0.2s" >
 			<p> <strong>A vitrine regional</strong> feita por quem é daqui para quem ama POA.</p>
 		</section>
+
+		
+			
 				
 		<!--  LANDING PAGE INICIAL-->	
+
 		<div>
 			<h4 class="chamadaSub animar" data-delay="0.3s">
 			  Recomendação de comércios locais bem avaliados no Google.
 			</h4>
 		  
-			<!--  BENEFICIOS  -->
-			<div id="avaliacao-destaque"></div>
 
+		<!--  BENEFICIOS  -->
+		<div id="avaliacao-destaque"></div>
+
+		  
+
+		  
+
+
+
+			
 			<h5 class="chamadaSub animar" data-delay="0.3s">
 			 Divulgação e presença digital gratuita para negócios locais.
 			</h5>
 			<p>Doe e receba funcionalidades extras em sua página.</p>
-			
-			<!--IMAGENS DO RESTAURANTE / GALERIA -->
+			<!--IMAGENS DO RESTAURANTE-->
 			<div class="galeria-wrapper">
-				<button class="btn-scroll btn-left" onclick="scrollGaleria(-1)">&#9664;</button>
-				<div class="galeria" id="galeria">
-					<img src="../viva-poa/assets/midia/banner-doadores.webp" alt="Principais doadores do projeto são divulgados neste espaço">
-					<img src="../viva-poa/assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" alt="Imagem 2">
-					<img src="../viva-poa/assets/midia/viva-poa-recomendacao-de-locais-em-porto-alegre.webp" alt="Imagem 3">
-					<img src="../viva-poa/assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" alt="Imagem 4">
-				</div>
-				<button class="btn-scroll btn-right" onclick="scrollGaleria(1)">&#9654;</button>
+					<button class="btn-scroll btn-left" onclick="scrollGaleria(-1)">&#9664;</button>
+					<div class="galeria" id="galeria">
+				<img src="../viva-poa/assets/midia/banner-doadores.webp" alt="Principais doadores do projeto são divulgados neste espaço">
+				<img src="../viva-poa/assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" alt="Imagem 2">
+				<img src="../viva-poa/assets/midia/viva-poa-recomendacao-de-locais-em-porto-alegre.webp" alt="Imagem 3">
+				<img src="../viva-poa/assets/midia/logo-viva-poa-site-de-divulgacao-de-estabelecientos-porto-alegre.webp" alt="Imagem 4">
+				
 			</div>
+					<button class="btn-scroll btn-right" onclick="scrollGaleria(1)">&#9654;</button>
+				  </div>
 			
-			<!-- SIMULA CHAT E SMARTPHONE -->
-			<h6 class="chamadaSub animar" data-delay="0.3s">
+			
+			
+			
+		  <!-- SIMULA CHAT E SMARTPHONE -->
+		  <h6 class="chamadaSub animar" data-delay="0.3s">
 			  Motivação e expectativa para o projeto Viva POA.
 			</h6>
 		  
-			<div class="imagemFeed" >
-				<section class="imagemFeed animar" data-delay="0.1s">
-					<img class="animar" src="../viva-poa/assets/midia/viva-poa-melhores-comercios-locais-em-porto-alegre.webp" alt="onde ir em porto alegre">
-				</section>
-			
-				<div class="blocoTitulos animar" data-delay="0.3s">
-					<section id="fundo" class="animar" data-delay="0.5s">
-						<h3>Esse site é parte de uma iniciativa minha para ajudar o comércio local de Porto Alegre.</h3>
-						<p>Dan Schaidt</p>
-					</section>
-			
-					<section id="fundo" class="animar" data-delay="0.7s">
-						<h7><strong>Doe para ajudar o projeto</strong></h7><br>
-						A intenção é trazer novas funções para os clientes e donos de estabelecimentos, como pagamentos pelo site e muito mais.<br>
-						A sua doação me ajuda continuar e buscar novos parceiros.<br>
-						<p>Dan Schaidt</p>
-					</section>
-				
-					<section id="fundo" class="animar" data-delay="0.7s">
-						<h8><strong>Com foco no marketing e empreendedorismo com responsabilidade social</strong></h8><br>
-						No Brasil existem 6,4 milhões de estabelecimentos. Desse total, 99% são micro e pequenas empresas (MPE). As MPEs respondem por 52% dos empregos com carteira assinada no setor privado (16,1 milhões).
-						<a href="https://sebrae.com.br/sites/PortalSebrae/ufs/sp/sebraeaz/pequenos-negocios-em-numeros,12e8794363447510VgnVCM1000004c00210aRCRD#:~:text=No%20Brasil%20existem%206%2C4,(16%2C1%20milh%C3%B5es)." target="_blank">Fonte: SEBRAE</a>
-						<p>Dan Schaidt</p>
-					</section>
-			
-					<img class="animar" src="../viva-poa/assets/midia/dan-schaidt-fundador-viva-poa.webp" alt="Dan Schaidt">
-				</div>
-			</div>
 		  
-			<!-- PERGUNTAS FREQUENTES EMPRESA-->
-			<h9 id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Empreendedor (FAQ)</h9>
-
-			<!--MENSALIDADE-->
-			<div class="blocoDeSecao">
-				<button onclick="toggleDescricao(this)"><h4>Funções de Venda [NOVO]</h4> </button>
-				<div class="descricao">
-					<p>A página é gratuita. No entando caso queira adicionar funcionalidades disponíveis você deve doar algum valor a partir de 100 reais.</p><br>
-					<p>A doação tem valor mínimo para cobrir custos com a página.</p>
-					<p>As funcionalidades disponíveis por enquanto são:</p>
-					<ul>
-						<li><span>Função 1:</span> Botão que direciona o cliente para o whatsapp + popup no início do site(aparece sempre que entrar no site).(Já disponível)</li>
-						<li><span>Função 2:</span> Capta o pedido e envia para o whatsapp com os dados: nome, cpf(não obrigatório) endereço, forma de pagamento, obervação (se houver) e total do pedido.(EM BREVE)</li>
-						<li><span>Função 3:</span> Pagamento online e uso de cupons de desconto (EM BREVE)</li>
-					</ul>
-				</div>
-			</div>
-		
-			<!--INSCRIÇÃO-->
-			<div class="blocoDeSecao">
-				<button onclick="toggleDescricao(this)"><h4>Como participar?</h4> </button>
-				<div class="descricao">
-					<p>Envie a sua inscrição através do formulário e ela será analisada.</p><br>
-					<a href="https://forms.gle/3d3bzMq18DrG6N9W8" target="_blank" rel="noopener noreferrer">Inscreva-se Clicando Aqui.</a>
-					<p>Requisitos:</p>
-					<ul>
-						<li>Ser localizado em Porto Alegre.</li>
-						<li>Possuir CNPJ Ativo</li>
-						<li>Ter avaliação positiva em: Atendimento e Serviço.</li>
-					</ul>
-				</div>
-			</div>
+		<div class="imagemFeed" >
+			
+			<section class="imagemFeed animar" data-delay="0.1s">
+				<img class="animar" src="../viva-poa/assets/midia/viva-poa-melhores-comercios-locais-em-porto-alegre.webp" alt="onde ir em porto alegre">
+			
+			</section>
+		  
+			<div class="blocoTitulos animar" data-delay="0.3s">
+			  <section id="fundo" class="animar" data-delay="0.5s">
+				<h3>Esse site é parte de uma iniciativa minha para ajudar o comércio local de Porto Alegre.</h3>
 				
-			<!--BENEFICIO-->
-			<div class="blocoDeSecao">
-				<button onclick="toggleDescricao(this)"><h4>Qual o benefício? (Para Empreendedores)</h4> </button>
-				<div class="descricao">
-					<ul>
-						<li>Digamos que você será visto por mais pessoas em mais lugares diferentes na internet.</li>
-						<li>Existem outras redes carentes de recomendação de estabelecimentos e todos os estabelecimentos da Viva POA serão recomendados lá.</li>
-						<li>Reddit, BlueSky, YouTube e Google meu negócio são redes muito utilizadas mas com uma linguagem totalmente diferente das demais redes (Instagram, facebook e essas mais conhecidas em divulgação de negócios).</li>
-						<li>Doadores poderão acessar funções em versão beta(antes do lançamento original)</li>
-						<li>As divulgações são distribuidas com técnicas de SEO e SEM. Foco no tráfego orgânico (aquele que o cliente vem sem você ter pago um anúncio), mas futuramente irei adicionar tráfego pago para difundir mais os empreendimentos locais na internet. Tudo de graça, você só paga as funções que quiser utilizar.</li>
-						<li>Você nunca precisará competir com outros estabelecimentos na sua página. Só você e seu produto irão aparecer.</li>
-					</ul>				 
+				<p>Dan Schaidt</p>
+			  </section>
+		  
+			  <section id="fundo" class="animar" data-delay="0.7s">
+				<h7><strong>Doe para ajudar o projeto</strong></h7>
+				A intenção é trazer novas funções para os clientes e donos de estabelecimentos, como pagamentos pelo site e muito mais.<br>
+				A sua doação me ajuda continuar e buscar novos parceiros.<br>
+				<p>Dan Schaidt</p>
+			  </section>
+			  
+			  <section id="fundo" class="animar" data-delay="0.7s">
+				<h8><strong>Com foco no marketing e empreendedorismo com responsabilidade social</strong></h8>
+				No Brasil existem 6,4 milhões de estabelecimentos. Desse total, 99% são micro e pequenas empresas (MPE). As MPEs respondem por 52% dos empregos com carteira assinada no setor privado (16,1 milhões).
+        <a href="https://sebrae.com.br/sites/PortalSebrae/ufs/sp/sebraeaz/pequenos-negocios-em-numeros,12e8794363447510VgnVCM1000004c00210aRCRD#:~:text=No%20Brasil%20existem%206%2C4,(16%2C1%20milh%C3%B5es)." target="_blank">Fonte: SEBRAE</a>
+				<p>Dan Schaidt</p>
+			  </section>
+		  
+			  <img class="animar" src="../viva-poa/assets/midia/dan-schaidt-fundador-viva-poa.webp" alt="Dan Schaidt">
+			</div>
+		  </div>
+		  
+			
+			
+		  <!-- PERGUNTAS FREQUENTES EMPRESA-->
+		<h9 id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Empreendedor (FAQ)</h9
+			>
+
+	
+		<!--MENSALIDADE-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Funções de Venda [NOVO]</h4> </button>
+					<div class="descricao">
+						<p>
+							A página é gratuita. No entando caso queira adicionar funcionalidades disponíveis você deve doar algum valor a partir de 100 reais.
+						  </p><br>
+						  <p>A doação tem valor mínimo para cobrir custos com a página.</p>
+						<p>As funcionalidades disponíveis por enquanto são:</p>
+						<ul>
+							<li><span>Função 1:</span> Botão que direciona o cliente para o whatsapp + popup no início do site(aparece sempre que entrar no site).(Já disponível)</li>
+							<li><span>Função 2:</span> Capta o pedido e envia para o whatsapp com os dados: nome, cpf(não obrigatório) endereço, forma de pagamento, obervação (se houver) e total do pedido.(EM BREVE)</li>
+							<li><span>Função 3:</span> Pagamento online e uso de cupons de desconto (EM BREVE)</li>
+						</ul>
+					</div>
 				</div>
+		
+		
+		<!--INSCRIÇÃO-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Como participar?</h4> </button>
+					<div class="descricao">
+						<p>
+							Envie a sua inscrição através do formulário e ela será analisada.
+						  </p><br>
+						  <a href="https://forms.gle/3d3bzMq18DrG6N9W8" target="_blank" rel="noopener noreferrer">Inscreva-se Clicando Aqui.</a>
+						<p>Requisitos:</p>
+						<ul>
+							<li>Ser localizado em Porto Alegre.</li>
+							<li>Possuir CNPJ Ativo</li>
+							<li>Ter avaliação positiva em: Atendimento e Serviço.</li>
+						</ul>
+					</div>
+				</div>
+				
+				
+		<!--BENEFICIO-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Qual o benefício? (Para Empreendedores)</h4> </button>
+					<div class="descricao">
+						<ul>
+							<li>Digamos que você será visto por mais pessoas em mais lugares diferentes na internet.</li>
+
+							<li>Existem outras redes carentes de recomendação de estabelecimentos e todos os estabelecimentos da Viva POA serão recomendados lá.</li>
+
+							<li>Reddit, BlueSky, YouTube e Google meu negócio são redes muito utilizadas mas com uma linguagem totalmente diferente das demais redes (Instagram, facebook e essas mais conhecidas em divulgação de negócios).</li>
+
+							<li>Doadores poderão acessar funções em versão beta(antes do lançamento original)</li>
+
+							<li>As divulgações são distribuidas com técnicas de SEO e SEM.
+								Foco no tráfego orgânico (aquele que o cliente vem sem você ter pago um anúncio), mas futuramente irei adicionar tráfego pago para difundir mais os empreendimentos locais na internet. Tudo de graça, você só paga as funções que quiser utilizar.</li>
+
+							<li>
+								Você nunca precisará competir com outros estabelecimentos na sua página. Só você e seu produto irão aparecer.
+							</li>
+						  </ul>
+						  				 
+					</div>
+				</div>
+			
+			
+		<!--CONDIÇÃO
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Qual a condição para aproveitar essa vantagem?</h4> </button>
+					<div class="descricao">
+						<ul>
+
+							<li>Você deve colocar a página criada no seu google meu negócio.Caso tenha site próprio, deve mencionar sua página da Viva POA nele, isso nos ajuda otimizar o SEO e abranger mais as buscas.</li>
+							<li>Ao usar a Viva POA como meio você concorda com essa condição.</li>
+							
+						  </ul>
+						  				 
+					</div>
+				</div>-->
+					
+
+					<!--PROXIMAS FUNÇÕES-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Doações</h4> </button>
+					<div class="descricao">
+						<p>Com o valor de doações será feito:</p>
+						<ul>
+							<li> Uma campanha para movimentar a econômia local.</li>
+							<li>Aquisição de domínio e servidor local para atualização com função de entrega.</li>
+							
+						  </ul>
+						  				 
+					</div>
+
+				</div>	
+
+
+
+		 <!-- PERGUNTAS FREQUENTES CLIENTE-->
+		 <p id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Cliente(FAQ)</p>
+
+				<!--PEDIDO-->
+
+				<div class="blocoDeSecao">
+					<button onclick="toggleDescricao(this)"><h4>Como Pedir?</h4> </button>
+					<div class="descricao">
+						<p>Para pedir é muito simples. Antes garanta que o estabelecimento tenha suporte para entregas.</p>
+						<ul>
+
+							<li>Depois de escolher um lugar clique no botão de pedir no canto inferior direito. Caso não exista o botão isso significa que o estabelecimento não optou por utilizar essa funcionalidade.</li>
+							
+						  </ul>
+						  				 
+					</div>
+					
+				</div>	
+
+
+
+
+
+		<!--  IMAGEM FIXA NA TELA-->
+		<div class="containerFixos">
+			<div class="blocoFixo">
+				<img src="../viva-poa/assets/midia/icones-local-avaliado-viva-poa-verificado.webp" alt="os melhores estabelecimentos de porto alegre">
+			  <section><p>Apoie o comércio local</p></section>
 			</div>
 
-			<!--PROXIMAS FUNÇÕES-->
-			<div class="blocoDeSecao">
-				<button onclick="toggleDescricao(this)"><h4>Doações</h4> </button>
-				<div class="descricao">
-					<p>Com o valor de doações será feito:</p>
-					<ul>
-						<li> Uma campanha para movimentar a econômia local.</li>
-						<li>Aquisição de domínio e servidor local para atualização com função de entrega.</li>
-					</ul>				 
-				</div>
-			</div>	
-
-		 	<!-- PERGUNTAS FREQUENTES CLIENTE-->
-		 	<p id="direcionaFAQ" class="blocoTitulos animar" data-delay="0.3s">Perguntas Frequentes Cliente(FAQ)</p>
-
-			<!--PEDIDO-->
-			<div class="blocoDeSecao">
-				<button onclick="toggleDescricao(this)"><h4>Como Pedir?</h4> </button>
-				<div class="descricao">
-					<p>Para pedir é muito simples. Antes garanta que o estabelecimento tenha suporte para entregas.</p>
-					<ul>
-						<li>Depois de escolher um lugar clique no botão de pedir no canto inferior direito. Caso não exista o botão isso significa que o estabelecimento não optou por utilizar essa funcionalidade.</li>
-					</ul>				 
-				</div>
-			</div>	
-		</div>
-
-		<!-- *********** RODAPÉ ************-->
-		<footer>
-			<a href="https://danschaidtdev.github.io/design-marketing-freelance/" target="_blank">Criado por Dan Schaidt Profissional Freelancer.</a>
-		</footer>
-
-		<br><br><br><br> <!-- Espaço de respiro para a barra inferior -->
-	</main> <!-- FINAL DO CORPO PRINCIPAL ROLÁVEL -->
+			<div class="blocoFixo">
+				<img src="../viva-poa/assets/midia/entrega-disponivel-viva-poa.webp" alt="faça entrega de bike">
+			  <section><p>Peça online</p></section>
+			</div>
+		</div><!--FECHA O CONTAINER FIXO-->
 
 
-	<!--  IMAGEM FIXA NA TELA-->
-	<div class="containerFixos">
-		<div class="blocoFixo">
-			<img src="../viva-poa/assets/midia/icones-local-avaliado-viva-poa-verificado.webp" alt="os melhores estabelecimentos de porto alegre">
-			<section><p>Apoie o comércio local</p></section>
-		</div>
+		<!--BOTAO SUPORTE-->
+		<a class="botao-flutuante" href="https://api.whatsapp.com/send?phone=555192671278" target="_blank">
+			<img src="assets/midia/logo-whatsapp-botao.webp" alt="Botão de whatsapp">
+			Suporte
+		</a>
+  
 
-		<div class="blocoFixo">
-			<img src="../viva-poa/assets/midia/entrega-disponivel-viva-poa.webp" alt="faça entrega de bike">
-			<section><p>Peça online</p></section>
-		</div>
-	</div>
+		
 
-	<!--BOTAO SUPORTE FLUTUANTE (Posicionado um pouco acima do bottom-nav)-->
-	<a id="botao-flutuante" class="botao-flutuante" href="https://api.whatsapp.com/send?phone=555192671278" target="_blank" style="bottom: 80px;">
-		<img src="assets/midia/logo-whatsapp-botao.webp" alt="Botão de whatsapp">
-		Suporte
-	</a>
-
-	<!-- BOTTOM NAVIGATION BAR -->
-	<nav class="app-bottom-nav">
-        <button class="nav-item" onclick="copiarChavePix()">
-            <span>💰 Doar PIX</span>
-        </button>
-        <a href="https://forms.gle/3d3bzMq18DrG6N9W8" target="_blank" rel="noopener noreferrer" class="nav-item">
-            <span>📝 Cadastro</span>
-        </a>
-    </nav>
 	
-	<!-- POPUP DO PIX -->
-	<div id="popupPixCopiado">Chave Pix copiada!</div>
 
-    <!-- JAVASCRIPT -->
-  	<script src="/viva-poa/assets/js/script.js" async></script>
+ 
+</div><!-- FINAL DA DIV DO BODY-->
+
+    <!--    JAVASCRIPT     -->
+  <script src="/viva-poa/assets/js/script.js" async></script>
 	<script src="/viva-poa/assets/js/popup.js" async></script>
 	<script src="/viva-poa/assets/js/busca.js" defer></script>
 	<script src="/viva-poa/assets/js/avaliacao.js" defer></script>
 	<script src="/viva-poa/assets/js/pedido.js" defer></script>
 	
-    <noscript>Habilite o JavaScrip para acessar ao site</noscript>
+
+
+
+    <noscript>Habilite o JavaScrip para acessar ao site</noscript><!--Mensagem de informação de erro-->
+	
+	
+
+	<!-- *********** RODAPÉ ************-->
+	<div>
+		<footer>
+      <a href="https://danschaidtdev.github.io/design-marketing-freelance/" target="_blank">Criado por Dan Schaidt Profissional Freelancer.</a>
+			
+		</footer>
+	</div>
 	
 </body>
 </html>
