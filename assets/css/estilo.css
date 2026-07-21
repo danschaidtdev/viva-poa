@@ -1,0 +1,853 @@
+:root{
+	/*Definição de variáveis*/
+	--cor-clara: #F5F5F5;
+	--cor-azul: #4FADE1; /* azul */ 
+	--cor-vermelho: #E74C3C; /*vermelho*/ 
+	--cor-cinza: #5A5A58; /*cinza*/
+	--cor-escura: #1E1E1C; /* escuro*/
+}
+
+/* Chrome, Edge, Safari BARRA DE NAVEGAÇÃO PERSONALIZADA*/
+::-webkit-scrollbar {
+	display: none;
+}
+  
+/* Firefox */
+html {
+	scrollbar-width: none;
+	scroll-behavior: smooth;
+}
+
+/* ESTRUTURA BASE DO APP */
+.app-layout {
+    margin: 0; 
+    padding: 0; 
+    background-color: var(--cor-clara); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: var(--cor-escura); 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+/* APP BAR FIXA NO TOPO */
+.app-header {
+    background-color: var(--cor-vermelho); 
+    color: var(--cor-clara); 
+    padding: 15px 15px 10px 15px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.app-title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ÁREA DE CONTEÚDO ROLÁVEL */
+.app-conteudo {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    scroll-behavior: smooth; 
+    background-color: var(--cor-clara); 
+}
+
+/* BOTTOM NAVIGATION BAR */
+.app-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-vermelho); 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor-clara); 
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none; 
+    border: none;
+    background: transparent;
+	cursor: pointer;
+}
+
+.nav-item:hover, .nav-item:active {
+    color: var(--cor-escura); 
+}
+
+.fonteSecao{
+	padding: 10px;
+	background-color: var(--cor-clara);
+	border-radius: 50px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 25px;
+	overflow: hidden; 
+}
+
+h1{
+    font-size: clamp(20px, 5vw, 25px); 
+    font-weight: bold;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: clamp(18px, 4vw, 20px);
+    font-weight: normal;
+}
+
+p{
+    font-size: clamp(12px, 2.5vw, 15px);
+}
+
+strong{
+	color: var(--cor-vermelho);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/************LOGO VIVA POA*************************************/
+#logo img {
+    float: right;
+    margin-top: 10px;
+    max-width: 100px;
+}
+
+/*************** BANNER ANIMADO COM TEXTO *********************/
+.banner {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 100%;
+	aspect-ratio: 16 / 6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	margin-bottom: 3%;
+	transition: all 0.4s ease;
+	color: white;
+	overflow: hidden; 
+	border-radius: 10px;
+}
+
+.banner img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
+}
+
+.banner::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+}
+
+.banner > *:not(img) {
+	position: relative;
+	z-index: 2;
+}
+
+.mensagem {
+	font-size: clamp(24px, 6vw, 60px);
+	color: var(--cor-escura);
+	text-shadow: 1px 1px 5px var(--cor-clara);
+	background-color: color-mix(in srgb, var(--cor-clara) 80%, transparent);
+	padding: 10px 20px;
+	border-radius: 15px;
+	width: 90%;
+	max-width: 1000px;
+	margin: 5% auto;
+	text-align: center;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	transition: font-size 0.4s ease, padding 0.4s ease, transform 0.4s ease;
+}
+
+/******************  LANDING PAGE ***********************/
+.baloes-container {
+	margin-top: 5%;
+	margin-bottom: 10%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center; 
+	gap: 20px;
+}
+
+.balaoMSG {
+	background-color: var(--cor-clara);
+	opacity: 1;
+	padding: 15px;
+	margin: 0; 
+	width: 100%;
+	max-width: 300px;
+	border-radius: 50px 50px 50px 0px;
+	box-shadow: 0 0 8px var(--cor-escura);
+	flex: 1 1 250px; 
+}
+
+.imagemFeed {
+	margin-top: 3%;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap; 
+	height: 70%; 
+	max-height: 50%;
+	background: var(--cor-vermelho);
+	border-radius: 10px;
+}
+ 
+.imagemFeed section img {
+	margin: 3%;
+	background: var(--cor-escura);
+	width: 100%;
+	max-width: 400px;
+	border-color: var(--cor-escura);
+	border-radius: 40px;
+	padding: 15px;
+	box-shadow: 5px 3px 15px var(--cor-escura);
+	height: auto;
+	object-fit: contain;
+}
+  
+#fundo{
+	background-color: var(--cor-clara) ;
+	padding: 15px;
+	margin: 5%;
+	margin-left: 20%;
+	border-radius: 50px 50px 50px 0px;
+	color: var(--cor-escura);
+}
+
+.blocoTitulos {
+	margin: 5%;
+	top: 10%;
+	width: 100%;
+	max-width: 85%;
+	background: var(--cor-vermelho);
+	color: var(--cor-clara);
+	display: inline-block;
+	padding: 20px;
+	border-radius: 6px;
+	white-space: normal;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+	flex: 1; 
+	box-sizing: border-box;
+}
+  
+.blocoTitulos strong{
+	color: var(--cor-escura);
+}
+
+.blocoTitulos h4{
+	color: var(--cor-clara);
+	font-weight: bold;
+}
+
+.blocoTitulos p{
+	color: var(--cor-escura);
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.blocoTitulos img{
+	width: 100%;
+	max-width: 30%;
+	border-radius: 100%;
+}
+
+.chamadaSub {
+	width: 90%;
+	background:  var(--cor-clara);
+	border-radius: 50px;
+	padding: 15px;
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-start;
+	box-shadow: 3px 3px 15px var(--cor-escura);
+	white-space: normal;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+	flex: 1; 
+	order: -1; 
+	gap: 10px;
+}
+
+/*   EFEITO LANDING PAGE   */
+.animar {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.8s ease-out;
+}
+  
+.animar.visivel {
+	opacity: 1;
+	transform: translateY(0);
+}
+  
+.animar[data-delay] {
+	transition-delay: var(--delay, 0s);
+}
+
+/************** RODAPE  ***************/
+footer{
+	margin: 0;
+	display: flex;
+    margin-top: 30%;
+    width: 100%;
+    background-color: var(--cor-vermelho);
+    color: white;
+    text-align: center;
+	justify-content: center;
+    padding: 30px 0;
+    font-size: 14px;
+	border-radius: 10px;
+}
+
+footer a{
+	color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+.estiloBotao {
+    margin: 20px auto; 
+    padding: 20px; 
+    width: 100%;
+    max-width: 600px; 
+    background-color: var(--cor-vermelho);
+    color: var(--cor-clara);
+    font-size: 20px;
+    display: block; 
+    text-align: center;
+	border: none;
+    border-radius: 50px;
+    box-sizing: border-box; 
+    transition: 0.3s ease; 
+}
+
+.estiloBotao:hover {
+    background-color: var(--cor-vermelho);
+    color: var(--cor-clara);
+    box-shadow: 5px 5px 4px var(--cor-cinza);
+}
+
+.blocoDeTexto {
+	padding: 15px;
+	width: 100%;
+	max-width: 100%;
+	margin-top: 15px;
+	background-color: var(--cor-clara);
+	border-left: 30px solid var(--cor-vemelho);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 10px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal; 
+	overflow: hidden;    
+	box-sizing: border-box;
+}
+	  
+.caixaTexto {
+	width: 90%;
+	height: auto;
+	margin: auto;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	white-space: normal;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+/************************  TAG  ******************/
+.tag {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	justify-content: flex-start;
+	margin-top: 3%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.blocoTag {
+	display: inline-block; 
+	padding: 0.3em 1em;     
+	background-color: var(--cor-vermelho);
+	border-radius: 50px;
+	color: var(--cor-clara);
+	font-size: clamp(12px, 2.5vw, 18px);
+	white-space: nowrap;    
+}
+
+/******************** POP UP **********************/
+.blocoPopup {
+	position: fixed;
+	width: 300px;
+	height: 350px;
+	padding: 10px;
+	background-color: var(--cor-vermelho);
+	border-radius: 10px;
+	display: flex;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%); 
+	justify-content: center;
+	align-items: center;
+	z-index: 9995;
+	box-shadow: 0 2px 30px var(--cor-cinza);
+}
+  
+.blocoPopup img {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
+	opacity: 1; 
+	border-radius: 10px;
+}
+  
+.textoPopup{
+	position: relative;
+	color: var(--cor-clara);
+	font-weight: bold;
+	text-align: center;
+	font-size: 10%;
+	text-shadow: 0 0 3px var(--cor-cinza);
+}
+
+.textoPopup .chamadaSub{
+	color: var(--cor-escura);
+	text-shadow: 0 0 1px var(--cor-cinza);
+}
+
+.textoPopup button{
+	margin-left: 10%;
+	padding: 12px;
+	opacity: 0.8;
+	max-width: 100%;
+	bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.botaoPopup {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: var(--cor-escura);
+	opacity: 0.6;
+	color: var(--cor-clara);
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.botaoPopup:hover{
+	opacity: 1;
+}
+
+/************	POPUP BOTAO DE DOAÇÃO	***********************/
+#popupPixCopiado {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--cor-vermelho);
+  color: var(--cor-clara);
+  padding: 20PX;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10000;
+  font-size: 18px;
+}
+
+#popupPixCopiado.mostrar {
+  opacity: 1;
+}
+
+/******************* CONTAINER FIXO DOS BOTÕES *****************/
+.containerFixos {
+	position: fixed;
+	top: 20%;
+	right: 1%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px; 
+	z-index: 1; 
+}
+  
+.blocoFixo {
+	width: 75px;
+	height: 75px;
+	padding: 3px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.20;
+	position: relative;
+	z-index: 0; 
+	right: 10%;
+}
+  
+.blocoFixo:hover {
+	opacity: 100%;
+}
+  
+.blocoFixo img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1; 
+	border-radius: 10px;
+}
+  
+.blocoFixo img:hover {
+	opacity: 0.8;
+}
+  
+.blocoFixo section {
+	position: relative;
+	color: var(--cor-clara);
+	text-align: center;
+	overflow: hidden;
+	text-shadow: 0px 0px 5px var(--cor-escura);
+}
+  
+.blocoFixo p {
+	font-size: clamp(9px, 0vw, 12px); 
+	font-weight: bold;
+}
+  
+/*********** CHAT DA PÁGINA *********************/
+.iconVerde span{
+	color: greenyellow;
+}
+
+#botao-flutuante {
+	position: fixed;
+	bottom: 80px; /* Alterado para ficar acima da nav */
+	right: 3%;
+	width: 200px;
+	background-color: #25d366;
+	color: var(--cor-clara);
+	border: none;
+	padding: 20px;
+	border-radius: 50px;
+	cursor: pointer;
+	font-weight: bold;
+	box-shadow: 0 2px 8px var(--cor-escura);
+	z-index: 9994;
+}
+  
+#botao-flutuante img{
+	margin: 3%;
+	max-width:30px;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.botao-flutuante.piscar {
+  animation: piscar 5s ease-in-out infinite;
+}
+
+#formulario-flutuante {
+	position: fixed;
+	bottom: 150px;
+	right: 3%;
+	max-width: 35%;
+	height: auto;
+	background: var(--cor-cinza);
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 5px 8px var(--cor-cinza);
+	z-index: 9995;
+}
+  
+#formulario-flutuante p{
+	font-size: 25px;
+	width: 100%;
+	color: var(--cor-clara);
+}
+
+#atendimento-form{
+	margin-left: 0;
+	max-width: 100%;
+	padding: 20px;
+}
+
+#atendimento-form h3{
+	font-size: 15px;
+	margin: 0;
+	color: var(--cor-escura);
+}
+
+#formulario-flutuante input{
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 0px transparent var(--cor-clara);
+}
+
+#formulario-flutuante textarea{
+	width: 95%;
+	min-height: 100px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 0px transparent var(--cor-cinza);
+}
+  
+#formulario-flutuante button {
+	background-color: var(--cor-cinza);
+	color: var(--cor-clara);
+	font-size: 15px;
+	max-width: 100%;
+	border: 1px solid var(--cor-cinza);
+	white-space: nowrap; 
+	font-weight: bold;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#formulario-flutuante button:hover{
+	background-color: var(--cor-vermelho);
+	color: var(--cor-clara);
+}
+
+.oculto {
+	display: none;
+}
+
+/**** GALERIA HORIZONTAL *******************************/
+.galeria-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 20px 40px;
+      box-sizing: border-box;
+}
+
+.galeria {
+      display: flex;
+      transition: scroll-behavior 0.3s;
+      scroll-behavior: smooth;
+      overflow-x: auto;
+      scrollbar-width: none; 
+}
+
+.galeria::-webkit-scrollbar {
+      display: none; 
+}
+
+.galeria img {
+	  aspect-ratio: 9 / 16;
+      flex: 0 0 auto;
+      width: 100%;
+      height: auto;
+	  max-width: 300px;
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-scroll {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--cor-vermelho);
+      border: none;
+      padding: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 10;
+}
+
+.btn-left {
+      left: 10px;
+}
+
+.btn-right {
+      right: 10px;
+}
+
+.btn-scroll:hover {
+      background-color: var(--cor-vermelho);
+}
+
+/******************* TELE ENTREGA  *************/
+.teleEntrega {
+  margin: 3% auto;
+  width: 100%;
+  max-width: 85%;
+  background: var(--cor-vermelho);
+  color: var(--cor-clara);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+.botaoPedido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25d366; 
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.botaoPedido img {
+  width: clamp(24px, 5vw, 36px);
+  height: auto;
+}
+
+.botaoPedido:hover {
+  transform: scale(1.05);
+}
+
+@keyframes aparecerZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.status-aberto {
+  background-color: var(--cor-clara);
+  padding: 8px;
+  border-radius: 20px;
+  color: var(--cor-vermelho);
+  box-shadow: 0 0 8px var(--cor-clara);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.status-fechado {
+  background-color: var(--cor-cinza);
+  padding: 8px;
+  border-radius: 20px;
+  color: var(--cor-escura);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.status-indisponivel { 
+  background-color: var(--cor-escura);
+  padding: 5px;
+  border-radius: 20px;
+  color: var(--cor-clara);
+  box-shadow: 0 0 8px var(--cor-vermelho);
+  font-weight: bold;
+}	
+
+/************* MOBILE   ****************/
+@media screen and (max-width: 480px){
+	.PlanoDeFundo {
+		justify-content: center; 
+	}
+	
+	#formulario-flutuante{
+		left: 5%;
+		max-width: 90%;
+	}
+
+	.blocoTitulos{
+		margin: 0;
+		margin-top: 20%;
+		width:100%;
+		max-width: 100%;
+		min-width: 300px;
+		padding: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.imagemFeed{
+		width: 100%;
+	}
+
+	.imagemFeed section img{
+		margin: 3%;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 250px;
+		height: auto;
+	}
+  
+	.blocoTitulos {
+		margin-top: 20%;
+		order: -1; 
+		width: 100%;
+		max-width: 90;
+		margin-bottom: 10px;
+	}
+
+	.mensagem {
+		font-size: clamp(15px, 4vw, 25px); 
+		padding: 10px;
+	}
+}
