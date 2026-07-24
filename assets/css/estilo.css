@@ -320,7 +320,7 @@ footer a{
 .margemLateral {
 	/* padding: top right bottom left */
 	padding: 0 10% 0% 5%; /* cria espaço interno uniforme */
-	
+	margin: auto;
 	box-sizing: border-box; /* garante que o padding não estoure o layout */
 }
 
@@ -333,7 +333,7 @@ footer a{
     row-gap: 15px;
 }
 .cabecalho-nav img{
-	width: 100%;
+	width: auto;
 	max-width: 120px;
 	
 }
@@ -371,7 +371,7 @@ a {
 	text-decoration: none;
 
 }
-#botaoForm{
+.botao{
 	background-color: var(--cor-escura);
 	font-size: 15px;
 	color: var(--cor-clara);
