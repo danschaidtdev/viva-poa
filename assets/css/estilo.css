@@ -333,7 +333,7 @@ footer a{
 }
 
 
-nav,button,a {
+button,a {
 	background-color: var(--cor-escura);
 	color: var(--cor-clara);
 	border: none; /* remove todas as bordas */
