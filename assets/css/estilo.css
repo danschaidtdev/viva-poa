@@ -775,8 +775,9 @@ a {
 .galeria-wrapper {
       position: relative;
       width: 100%;
+	  height: auto;
       overflow: hidden;
-      padding: 20px 40px;
+     
       box-sizing: border-box;
     }
 
