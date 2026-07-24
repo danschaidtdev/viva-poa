@@ -20,14 +20,10 @@
 	  
   }
   
-  
-  
 .fonteSecao{
 	padding: 10px;
 	background-color: var(--cor-clara);
 	border-radius: 50px;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 25px;
 	overflow: hidden; /* Impede o conteúdo de ultrapassar */
 }
 
@@ -36,7 +32,7 @@
 	background: var(--cor-clara);
 	margin: 0; /* zera margens externas que podem causar desalinhamento */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	
+	font-size: medium;
 	color: var(--cor-escura);
 
 	
@@ -48,14 +44,6 @@
     font-weight: bold;
 }
 
-h2, h3, h4, h5, h6 {
-    font-size: clamp(18px, 4vw, 20px);
-    font-weight: normal;
-}
-
-p{
-    font-size: clamp(12px, 2.5vw, 15px);
-}
 
 strong{
 	color: var(--cor-vermelho);
@@ -361,7 +349,7 @@ nav,button,a {
 	
 }
 
-nav,button:hover{
+nav,button,a:hover{
 	background-color: var(--cor-clara);
 	border-bottom: 2px solid var(--cor-escura);
 	color: var(--cor-escura);
