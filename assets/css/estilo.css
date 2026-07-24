@@ -327,7 +327,7 @@ footer a{
 
 .cabecalho-nav {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
     flex-direction: row;
     row-gap: 15px;
@@ -369,23 +369,9 @@ nav,button:hover{
 }
 a {
 	text-decoration: none;
-
-}
-#botaoForm{
-	background-color: var(--cor-escura);
-	font-size: 15px;
-	color: var(--cor-clara);
-	border: none; /* remove todas as bordas */
-	border-bottom: 2px solid var(--cor-clara); /* apenas linha inferior */
-	border-radius: 50px; /* arredonda só os cantos de baixo */
-	padding: 10px;
-	position: relative;
-	cursor: pointer;
-	margin-right: 5px;
-	
 }
 
-#botaoForm:hover{
+nav,button:hover{
 	background-color: var(--cor-vermelho);	
 }
 
