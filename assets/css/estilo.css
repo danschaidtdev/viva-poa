@@ -346,7 +346,7 @@ button,a {
 	
 }
 
-button,a:hover{
+button:hover, a:hover {
 	background-color: var(--cor-clara);
 	border-bottom: 2px solid var(--cor-escura);
 	color: var(--cor-escura);
