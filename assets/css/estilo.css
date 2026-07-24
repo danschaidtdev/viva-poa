@@ -32,7 +32,7 @@
 	background: var(--cor-clara);
 	margin: 0; /* zera margens externas que podem causar desalinhamento */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-size: large;
+	font-size: larger;
 	color: var(--cor-escura);
 
 	
@@ -471,7 +471,6 @@ nav,button:hover{
 	border-radius: 50px;
 	color: var(--cor-clara);
 
-	font-size: clamp(12px, 2.5vw, 18px);
 	white-space: nowrap;    /* impede quebra de linha */
 }
 
