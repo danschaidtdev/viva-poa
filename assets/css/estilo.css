@@ -324,6 +324,13 @@ footer a{
 	box-sizing: border-box; /* garante que o padding não estoure o layout */
 }
 
+
+.cabecalho-nav{
+	display: flex;
+	justify-content: center;
+
+}
+
 .navegador {
 	background-color: var(--cor-vermelho);
 	display: flex;
