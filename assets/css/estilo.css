@@ -303,7 +303,7 @@ footer a{
 
 .margemLateral {
 	/* padding: top right bottom left */
-	padding: 0;
+	padding: 0 10% 0% 5%; /* cria espaço interno uniforme */
 	margin: auto;
 	box-sizing: border-box; /* garante que o padding não estoure o layout */
 }
@@ -328,6 +328,7 @@ footer a{
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	padding: 1% 10vw; /* 5% da largura da viewport nas laterais */
 	box-sizing: border-box;
 	transition: padding 0.3s ease; /* efeito suave no redimensionamento */
 }
@@ -940,7 +941,7 @@ a {
 		margin-top: 20%;
 		width:100%;
 		max-width: 100%;
-		min-width: auto;
+		min-width: 300px;
 		padding: 20px;
 	  }
 
