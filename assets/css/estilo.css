@@ -328,6 +328,9 @@ footer a{
 .cabecalho-nav{
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
+  	row-direction: row;
+  	row-gap: 15px;
 
 }
 .cabecalho-nav img{
