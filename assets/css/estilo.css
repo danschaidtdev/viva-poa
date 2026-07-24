@@ -330,6 +330,11 @@ footer a{
 	justify-content: center;
 
 }
+.cabecalho-nav img{
+	width: 100%;
+	max-width: 160px;
+	
+}
 
 .navegador {
 	background-color: var(--cor-vermelho);
