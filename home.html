@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva POA-Recomendações de locais em Porto Alegre</title>
+
+ <!--ESTILO-->
+    <style>
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="navegador">
+        <div id="busca-container">
+    <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
+    <button id="botao-busca" class="estiloBotao">Buscar</button>
+    <div class="botoes-categorias">
+      <button onclick="buscarPorCategoria('pizza')">Pizza</button>
+      <button onclick="buscarPorCategoria('lanches')">Lanche</button>
+      <button onclick="buscarPorCategoria('mercado')">Mercado</button>
+      <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
+      <button onclick="mostrarAleatorios()">ME SURPREENDA!</button>
+      <button id="somente-abertos" data-active="false">SÓ ABERTOS</button>
+    </div>
+</div>
+
+  <div id="resultados"></div><br>
+
+    </div>
+</body>
+</html>
