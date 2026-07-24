@@ -326,6 +326,7 @@ footer a{
 	background-color: var(--cor-vermelho);
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	width: 100%;
 	padding: 1% 10vw; /* 5% da largura da viewport nas laterais */
 	box-sizing: border-box;
