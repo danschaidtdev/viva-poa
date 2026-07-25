@@ -943,6 +943,7 @@ a {
 		width:100%;
 		max-width: 100%;
 		min-width: 300px;
+		min-height: 250px;
 		padding: 20px;
 	  }
 
