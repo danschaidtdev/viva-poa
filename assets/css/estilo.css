@@ -943,7 +943,6 @@ a {
 		width:100%;
 		max-width: 100%;
 		min-width: 300px;
-		min-height: 250px;
 		padding: 20px;
 	  }
 
@@ -953,7 +952,11 @@ a {
 	
 }
 
-
+.publiIndex{
+	background-color: #E74C3C;
+	width: 300px;
+	height: 250px;
+}
 /* Responsivo: empilha tudo em telas menores */
 @media (max-width: 768px) {
 
