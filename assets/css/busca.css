@@ -19,6 +19,7 @@
   /* 1. Organiza o input e o botão lado a lado */
 .linha-pesquisa {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
     gap: 10px; /* Espaço entre a barra e o botão */
