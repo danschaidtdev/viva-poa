@@ -39,7 +39,7 @@
 
 /* 3. O seu estiloBotao atualizado e menor */
 .estiloBotao {
-    padding: 15px 30px; /* Alinhado com a altura da barra de pesquisa */
+    padding: 5px; /* Alinhado com a altura da barra de pesquisa */
     background-color: var(--cor-vermelho);
     color: var(--cor-clara);
     text-align: center;
