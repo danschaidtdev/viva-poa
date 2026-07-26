@@ -957,7 +957,7 @@ a {
     height: 300px;
     background-color: #E74C3C;
     box-sizing: border-box;
-    padding: 5px;
+    padding: 10px;
     margin: auto;
     /* Organiza os elementos em coluna (um em cima do outro) */
     display: flex;
