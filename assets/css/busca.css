@@ -34,7 +34,7 @@
     border-radius: 50px; 
     border: 1px solid var(--cor-cinza);
     box-sizing: border-box;
-    font-size: 16px; /* Evita que o celular dê zoom automático ao clicar na barra */
+    font-size: 10px; /* Evita que o celular dê zoom automático ao clicar na barra */
 }
 
 /* 3. O seu estiloBotao atualizado e menor */
