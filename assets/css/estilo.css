@@ -306,7 +306,10 @@ footer a{
 	padding: 0 10% 0% 5%; /* cria espaço interno uniforme */
 	margin: auto;
 	box-sizing: border-box; /* garante que o padding não estoure o layout */
+	display: flex;
+	justify-content: center;
 }
+
 
 
 .cabecalho-nav {
