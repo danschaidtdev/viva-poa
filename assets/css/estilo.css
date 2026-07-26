@@ -306,10 +306,7 @@ footer a{
 	padding: 0 10% 0% 5%; /* cria espaço interno uniforme */
 	margin: auto;
 	box-sizing: border-box; /* garante que o padding não estoure o layout */
-	display: flex;
-	justify-content: center;
 }
-
 
 
 .cabecalho-nav {
@@ -961,7 +958,7 @@ a {
     background-color: #E74C3C;
     box-sizing: border-box;
     padding: 5px;
-    
+    margin: auto;
     /* Organiza os elementos em coluna (um em cima do outro) */
     display: flex;
     flex-direction: column; 
