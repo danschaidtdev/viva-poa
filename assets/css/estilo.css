@@ -32,7 +32,7 @@
 	background: var(--cor-clara);
 	margin: 0; /* zera margens externas que podem causar desalinhamento */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-size: larger;
+	font-size: medium;
 	color: var(--cor-escura);
 
 	
