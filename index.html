@@ -96,17 +96,22 @@
   <!--ABA DE BUSCA E RESULTADOS-->
 
 	<div id="busca-container">
-    <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
-    <button id="botao-busca" class="estiloBotao">Buscar</button>
-    <div class="botoes-categorias">
-      <button onclick="buscarPorCategoria('pizza')">Pizza</button>
-      <button onclick="buscarPorCategoria('lanches')">Lanche</button>
-      <button onclick="buscarPorCategoria('mercado')">Mercado</button>
-      <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
-      <button onclick="mostrarAleatorios()">ME SURPREENDA!</button>
-      <button id="somente-abertos" data-active="false">SÓ ABERTOS</button>
-    </div>
-</div>
+		
+		<!-- NOVA DIV: Agrupa o input e o botão na mesma linha -->
+		<div class="linha-busca">
+			<input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
+			<button id="botao-busca">Buscar</button> <!-- Foi removida a classe 'estiloBotao' daqui -->
+		</div>
+
+		<div class="botoes-categorias">
+		  <button onclick="buscarPorCategoria('pizza')">Pizza</button>
+		  <button onclick="buscarPorCategoria('lanches')">Lanche</button>
+		  <button onclick="buscarPorCategoria('mercado')">Mercado</button>
+		  <button onclick="buscarPorCategoria('farmacia')">Farmácia</button>
+		  <button onclick="mostrarAleatorios()">ME SURPREENDA!</button>
+		  <button id="somente-abertos" data-active="false">SÓ ABERTOS</button>
+		</div>
+	</div>
 
   <div id="resultados"></div><br>
 

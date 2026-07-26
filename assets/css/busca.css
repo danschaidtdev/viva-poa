@@ -8,13 +8,56 @@
 
 
 
-  #busca-container {
+ /* FIXAR O CONTAINER DE BUSCA NO TOPO AO ROLAR */
+#busca-container {
+    position: sticky;
+    top: 0;
+    background-color: var(--cor-clara); /* Fundo sólido para não sobrepor o texto de baixo ao rolar */
+    z-index: 9990; /* Z-index alto para ficar acima do site, mas abaixo dos popups */
+    padding: 15px 0; /* Dá um respiro visual */
+    border-bottom: 2px solid var(--cor-cinza); /* Uma linha discreta separando a busca do resto do site */
+}
+
+/* ORGANIZA O INPUT E O BOTÃO LADO A LADO */
+.linha-busca {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-  }
+    gap: 10px; /* Dá um espacinho entre a barra de digitar e o botão */
+    margin-bottom: 15px; /* Distância entre a busca e os botões de categoria abaixo */
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ESTILO DA BARRA DE DIGITAR (INPUT) */
+#busca {
+    flex: 1; /* Faz o input esticar para ocupar o espaço que sobrar na esquerda */
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--cor-cinza);
+    font-size: 16px;
+    outline: none;
+}
+
+/* ESTILO DO BOTÃO BUSCAR MENOR */
+#botao-busca {
+    padding: 12px 25px; /* Tamanho muito menor do que o antigo 'estiloBotao' */
+    background-color: var(--cor-vermelho);
+    color: var(--cor-clara);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    width: auto; /* Permite que ele fique apenas do tamanho do texto */
+    margin: 0; /* Remove margens que atrapalhariam o alinhamento */
+}
+
+#botao-busca:hover {
+    background-color: var(--cor-escura);
+}
 
   input[type="text"] {
     margin: 1%;
