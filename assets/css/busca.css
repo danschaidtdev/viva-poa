@@ -68,7 +68,7 @@
     height: 60px;
     border: 1px solid var(--cor-cinza);
     border-radius: 5px;
-    font-size: 18px;
+    font-size: small;
   }
 
   .botoes-categorias {
