@@ -952,14 +952,27 @@ a {
 	
 }
 
-.publiIndex{
-	width: 300px;
-	height: 250px;
-	background-color: #E74C3C;	
-	display: flex;
-	justify-content: center;
-	
+.publiIndex {
+    width: 300px;
+    height: 250px;
+    background-color: #E74C3C;
+    box-sizing: border-box;
+    padding: 5px;
+    
+    /* Organiza os elementos em coluna (um em cima do outro) */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    overflow: hidden; /* Garante que nada saia do quadrado de 300x250 */
 }
+
+.publiIndex img {
+    width: 100%;
+    height: 100%; /* Preenche o espaço restante */
+    object-fit: cover; /* Corta a imagem proporcionalmente sem amassar */
+    border-radius: 4px; /* Deixa as bordinhas da imagem levemente arredondadas */
+}
+
 /* Responsivo: empilha tudo em telas menores */
 @media (max-width: 768px) {
 
