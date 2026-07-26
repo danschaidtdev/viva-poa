@@ -16,6 +16,50 @@
     margin-bottom: 30px;
   }
 
+  /* 1. Organiza o input e o botão lado a lado */
+.linha-pesquisa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Espaço entre a barra e o botão */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px auto; /* Centraliza na tela e empurra os botões de baixo */
+}
+
+/* 2. Faz a barra de pesquisa ocupar o espaço que sobrar */
+.linha-pesquisa input {
+    flex: 1;
+    padding: 15px; 
+    border-radius: 50px; 
+    border: 1px solid var(--cor-cinza);
+    box-sizing: border-box;
+    font-size: 16px; /* Evita que o celular dê zoom automático ao clicar na barra */
+}
+
+/* 3. O seu estiloBotao atualizado e menor */
+.estiloBotao {
+    padding: 15px 30px; /* Alinhado com a altura da barra de pesquisa */
+    background-color: var(--cor-vermelho);
+    color: var(--cor-clara);
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    
+    /* As mudanças principais estão aqui: */
+    width: auto; /* Em vez de 100%, o botão se ajusta ao tamanho da palavra "Buscar" */
+    margin: 0; /* Zera a margem antiga para alinhar perfeitamente com o input */
+    flex-shrink: 0; /* Impede que o botão seja amassado em telas pequenas */
+}
+
+.estiloBotao:hover {
+    background-color: var(--cor-vermelho);
+    color: var(--cor-clara);
+    box-shadow: 5px 5px 4px var(--cor-cinza);
+}
+
   input[type="text"] {
     margin: 1%;
     padding: 10px;

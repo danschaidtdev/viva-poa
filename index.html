@@ -95,9 +95,15 @@
 
   <!--ABA DE BUSCA E RESULTADOS-->
 
-	<div id="busca-container">
-    <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
-    <button id="botao-busca" class="estiloBotao">Buscar</button>
+<div id="busca-container">
+    
+    <!-- Agrupa a barra e o botão na mesma linha -->
+    <div class="linha-pesquisa">
+        <input type="text" id="busca" placeholder="Pesquise pela rua, bairro, nome, prato...">
+        <button id="botao-busca" class="estiloBotao">Buscar</button>
+    </div>
+
+    <!-- Os botões de categorias continuam embaixo exatamente como eram -->
     <div class="botoes-categorias">
       <button onclick="buscarPorCategoria('pizza')">Pizza</button>
       <button onclick="buscarPorCategoria('lanches')">Lanche</button>
